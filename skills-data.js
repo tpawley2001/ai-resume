@@ -6,13 +6,13 @@
 const RESUME_DATA = {
     personal: {
         name: "Tyson Pawley",
-        title: "Data Analyst | Healthcare IT | Python Developer",
+        title: "Operations Project Manager | Data Analyst | Healthcare IT",
         email: "tpawley2001@gmail.com",
         phone: "509-263-6457",
         location: "Spokane, WA",
         linkedin: "https://linkedin.com/in/tysonpawley",
-        github: "https://github.com/tysonpawley",
-        summary: "Results-driven Data Analyst with expertise in healthcare data analysis, Python development, and business intelligence. Experienced in SQL, Tableau, Power BI, and ETL processes. Passionate about leveraging data to drive healthcare outcomes and operational efficiency."
+        github: "https://github.com/tpawley2001",
+        summary: "Strategic Operations Project Manager with 16+ years of healthcare industry experience specializing in employee benefits, insurance, and provider network operations. Proven expertise in leading operational initiatives from planning through execution, driving process improvements that increased efficiency by 20%. Skilled in cross-functional team collaboration, data analysis and reporting tools, and regulatory compliance. Demonstrated ability to work in ambiguous, innovative environments while delivering projects on time, within scope, and within budget."
     },
     
     skills: {
@@ -52,48 +52,71 @@ const RESUME_DATA = {
             { name: "Jupyter", level: 90, icon: "fa-book" },
             { name: "VS Code", level: 92, icon: "fa-code" },
             { name: "Linux", level: 85, icon: "fa-linux" }
+        ],
+        
+        operations: [
+            { name: "Project Management", level: 95, icon: "fa-tasks" },
+            { name: "Cross-Functional Leadership", level: 92, icon: "fa-users" },
+            { name: "Process Improvement", level: 90, icon: "fa-chart-line" },
+            { name: "Budget Management", level: 85, icon: "fa-dollar-sign" },
+            { name: "Risk Mitigation", level: 88, icon: "fa-shield-alt" },
+            { name: "Stakeholder Communication", level: 90, icon: "fa-comments" }
         ]
     },
     
     experience: [
         {
-            title: "Healthcare Data Analyst",
-            company: "Healthcare Organization",
+            title: "Customer Care Specialist / EDI Analyst",
+            company: "First Choice Health",
             location: "Remote",
-            date: "2023 - Present",
-            description: "Analyze clinical and operational data to support healthcare decision-making. Develop dashboards and reports using Tableau and Power BI. Collaborate with clinical teams to identify trends and improve patient outcomes.",
+            date: "February 2025 – Present",
+            description: "Lead analysis of existing operational processes for EDI claims routing, recommending improvements to increase efficiency and reduce costs. Collaborate cross-functionally with multiple departments to ensure smooth claims operations and project execution.",
             highlights: [
-                "Developed automated reporting solutions saving 20+ hours weekly",
-                "Created interactive dashboards for executive leadership",
-                "Implemented data quality improvements reducing errors by 35%"
+                "Utilize data analysis and reporting tools to gather insights into operations performance",
+                "Ensure claims products meet quality standards and compliance requirements",
+                "Maintain detailed documentation for claims processing procedures"
             ],
-            tags: ["SQL", "Tableau", "Python", "Healthcare Data"]
+            tags: ["EDI", "Claims Operations", "Process Improvement", "Healthcare"]
         },
         {
-            title: "Data Analyst",
-            company: "Previous Company",
+            title: "Association Manager",
+            company: "WA State US Bowling Congress",
             location: "Spokane, WA",
-            date: "2021 - 2023",
-            description: "Performed data analysis and reporting for business operations. Managed ETL processes and maintained data pipelines. Created visualizations to communicate insights to stakeholders.",
+            date: "August 2024 – August 2025",
+            description: "Lead project management of organizational initiatives, owning planning, execution, and closing of projects on time and within budget. Identify potential risks and develop strategies to mitigate them for tournament operations.",
             highlights: [
-                "Built ETL pipelines processing 1M+ records daily",
-                "Developed predictive models improving forecast accuracy by 25%",
-                "Trained team members on SQL and data visualization best practices"
+                "Facilitate clear communication between teams, stakeholders, and leadership",
+                "Manage tournament operations and logistics",
+                "Drive continuous improvement in organizational processes"
             ],
-            tags: ["SQL", "Python", "Power BI", "ETL"]
+            tags: ["Project Management", "Event Operations", "Leadership"]
         },
         {
-            title: "Junior Data Analyst",
-            company: "Entry Level Company",
-            location: "Spokane, WA",
-            date: "2019 - 2021",
-            description: "Started career in data analysis, learning SQL, Excel, and basic programming. Supported senior analysts with data cleaning and report generation.",
+            title: "Team Lead, Claims Processing",
+            company: "Sedgwick Government Solutions",
+            location: "Remote",
+            date: "May 2024 – September 2024",
+            description: "Led cross-functional teams in claims inventory management and operational planning. Identified key requirements for teams and external vendors to optimize workflow. Coached staff on performance improvement.",
             highlights: [
-                "Mastered SQL and database querying within 6 months",
-                "Automated manual reporting processes using Excel VBA",
-                "Recognized for attention to detail and data accuracy"
+                "Demonstrated strong organizational and project management capabilities",
+                "Optimized workflow processes for claims processing",
+                "Mentored team members on performance standards"
             ],
-            tags: ["Excel", "SQL", "Data Entry", "Reporting"]
+            tags: ["Team Leadership", "Claims Processing", "Operations"]
+        },
+        {
+            title: "Operations Manager, Claims",
+            company: "Kaiser Permanente",
+            location: "Spokane, WA",
+            date: "February 2007 – November 2023",
+            description: "Directed claims, adjustments, third-party liability, and coordination of benefits departments. Led project management of operational initiatives, owning planning, execution, and closing of projects delivered on time, within scope, within budget.",
+            highlights: [
+                "Achieved 20% inventory reduction through process improvements",
+                "Led cross-functional teams in operational planning and execution",
+                "Analyzed operational processes and recommended efficiency improvements",
+                "Utilized data analysis tools to make data-driven decisions"
+            ],
+            tags: ["Operations Management", "Project Management", "Claims", "Leadership"]
         }
     ],
     
@@ -170,13 +193,14 @@ const AI_KNOWLEDGE = {
     // Job compatibility analysis
     analyzeJobFit: function(jobDescription) {
         const keywords = {
+            // Data/Technical Skills
             "sql": { match: true, strength: "expert", years: 5 },
             "python": { match: true, strength: "advanced", years: 4 },
             "tableau": { match: true, strength: "expert", years: 4 },
             "power bi": { match: true, strength: "advanced", years: 3 },
-            "healthcare": { match: true, strength: "expert", years: 3 },
+            "healthcare": { match: true, strength: "expert", years: 16 },
             "data analyst": { match: true, strength: "expert", years: 5 },
-            "clinical": { match: true, strength: "advanced", years: 3 },
+            "clinical": { match: true, strength: "advanced", years: 16 },
             "epic": { match: true, strength: "advanced", years: 2 },
             "etl": { match: true, strength: "advanced", years: 4 },
             "statistics": { match: true, strength: "intermediate", years: 3 },
@@ -184,7 +208,26 @@ const AI_KNOWLEDGE = {
             "aws": { match: true, strength: "intermediate", years: 2 },
             "docker": { match: true, strength: "beginner", years: 1 },
             "r": { match: true, strength: "intermediate", years: 2 },
-            "excel": { match: true, strength: "expert", years: 7 }
+            "excel": { match: true, strength: "expert", years: 7 },
+            // Operations/Project Management Skills
+            "project manager": { match: true, strength: "expert", years: 16 },
+            "operations manager": { match: true, strength: "expert", years: 16 },
+            "operations": { match: true, strength: "expert", years: 16 },
+            "cross-functional": { match: true, strength: "expert", years: 16 },
+            "process improvement": { match: true, strength: "expert", years: 16 },
+            "budget management": { match: true, strength: "advanced", years: 10 },
+            "risk mitigation": { match: true, strength: "advanced", years: 16 },
+            "stakeholder": { match: true, strength: "expert", years: 16 },
+            "claims": { match: true, strength: "expert", years: 16 },
+            "leadership": { match: true, strength: "expert", years: 16 },
+            "team lead": { match: true, strength: "expert", years: 16 },
+            "continuous improvement": { match: true, strength: "expert", years: 16 },
+            "strategic planning": { match: true, strength: "expert", years: 10 },
+            "vendor management": { match: true, strength: "advanced", years: 8 },
+            "quality assurance": { match: true, strength: "expert", years: 16 },
+            "project planning": { match: true, strength: "expert", years: 16 },
+            "project execution": { match: true, strength: "expert", years: 16 },
+            "edi": { match: true, strength: "expert", years: 16 }
         };
         
         const jobLower = jobDescription.toLowerCase();
@@ -216,21 +259,41 @@ const AI_KNOWLEDGE = {
         greeting: "Hello! I'm Tyson's AI assistant. I can help you understand his skills, experience, and assess job fit. What would you like to know?",
         
         skills: `Tyson's top skills include:
-• **Data Analysis**: SQL (5+ years), Tableau (4+ years), Power BI (3+ years)
-• **Programming**: Python (4+ years), including Pandas, NumPy, and data science libraries
-• **Healthcare**: Epic Systems, HL7/FHIR, Clinical Data Analysis, Revenue Cycle
-• **Tools**: Git, AWS, Docker, Jupyter, Excel Advanced
 
-He's particularly strong in healthcare data analysis and SQL-based reporting.`,
+**Operations & Project Management:**
+• Project Planning, Execution & Closing (16+ years)
+• Cross-Functional Team Leadership (16+ years)
+• Process Improvement & Efficiency (16+ years)
+• Budget & Scope Management (10+ years)
+• Risk Identification & Mitigation (16+ years)
 
-        healthcare: `Yes! Tyson has 3+ years of healthcare data analysis experience:
+**Data & Technical:**
+• SQL (5+ years), Tableau (4+ years), Power BI (3+ years)
+• Python (4+ years), Excel Advanced (7+ years)
+• Data Analysis, ETL Processes, Statistical Analysis
 
-• **Epic Systems**: Proficient in Epic Clarity data model and reporting
-• **Clinical Data**: Experience with patient outcomes, operational metrics
-• **Compliance**: HIPAA knowledge and healthcare data security
-• **Revenue Cycle**: Understanding of healthcare billing and financial data
+**Healthcare:**
+• Epic Systems, HL7/FHIR, Clinical Data Analysis
+• Revenue Cycle, Claims Operations, EDI
+• HIPAA Compliance, Quality Assurance
 
-He's worked with hospitals and healthcare organizations to improve data quality and reporting.`,
+He's particularly strong in healthcare operations and data-driven project management.`,
+
+        healthcare: `Yes! Tyson has 16+ years of healthcare industry experience:
+
+**Operations Management:**
+• Operations Manager at Kaiser Permanente (16+ years)
+• Directed claims, adjustments, third-party liability, COB departments
+• Led cross-functional teams and operational initiatives
+• Achieved 20% inventory reduction through process improvements
+
+**Clinical & Data:**
+• Epic Systems: Proficient in Epic Clarity data model and reporting
+• Clinical Data: Experience with patient outcomes, operational metrics
+• EDI/Claims: Healthcare claims processing and EDI routing
+• Compliance: HIPAA knowledge and healthcare data security
+
+He's worked extensively in healthcare operations, claims, and project management.`,
 
         projects: `Here are Tyson's key projects:
 
@@ -239,33 +302,41 @@ He's worked with hospitals and healthcare organizations to improve data quality 
 3. **ETL Pipeline Framework** - Reusable Python framework for data integration
 4. **Predictive Analytics Model** - ML model for patient readmission prediction (85% accuracy)
 
-Each demonstrates his technical skills and problem-solving abilities.`,
+**Operations Achievements:**
+• 20% claims inventory reduction through process improvements at Kaiser Permanente
+• Led EDI claims routing optimization at First Choice Health
+• Managed tournament operations for WA State US Bowling Congress
 
-        experience: `Tyson has 5+ years of data analysis experience:
+Each demonstrates his technical skills, operational expertise, and problem-solving abilities.`,
 
-**Current**: Healthcare Data Analyst (2023-Present)
-- Clinical and operational data analysis
-- Tableau/Power BI dashboard development
-- Automated reporting solutions
+        experience: `Tyson has 16+ years of healthcare operations and project management experience:
 
-**Previous**: Data Analyst (2021-2023)
-- ETL pipeline development
-- Predictive modeling
-- Team training and mentorship
+**Current**: Customer Care Specialist / EDI Analyst at First Choice Health (2025-Present)
+- Lead analysis of operational processes for EDI claims routing
+- Collaborate cross-functionally with multiple departments
 
-**Entry Level**: Junior Data Analyst (2019-2021)
-- SQL and Excel mastery
-- Report automation
-- Data quality initiatives`,
+**Association Manager** at WA State US Bowling Congress (2024-2025)
+- Lead project management of organizational initiatives
+- Facilitate communication between teams, stakeholders, and leadership
+
+**Team Lead, Claims Processing** at Sedgwick Government Solutions (2024)
+- Led cross-functional teams in claims inventory management
+- Optimized workflow processes for claims processing
+
+**Operations Manager, Claims** at Kaiser Permanente (2007-2023)
+- Directed claims, adjustments, third-party liability, COB departments
+- Achieved 20% inventory reduction through process improvements
+- Led project management of operational initiatives from planning to execution`,
 
         contact: `You can reach Tyson at:
 
 📧 **Email**: tpawley2001@gmail.com
 📱 **Phone**: 509-263-6457
-💼 **LinkedIn**: linkedin.com/in/tysonpawley
-🐙 **GitHub**: github.com/tysonpawley
+💼 **LinkedIn**: linkedin.com/in/tyson-pawley-2234a565
+🐙 **GitHub**: github.com/tpawley2001
+🌐 **AI Resume**: https://tpawley2001.github.io/ai-resume/
 
-He's currently open to remote Data Analyst and Healthcare IT opportunities!`
+He's currently open to remote Operations Project Manager, Data Analyst, and Healthcare IT opportunities!`
     }
 };
 
