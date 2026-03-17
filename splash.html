@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access - Tyson Pawley Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f1f5f9;
+        }
+        
+        .splash-container {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 60px 50px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            color: #94a3b8;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 15px 20px;
+            background: #0f172a;
+            border: 2px solid #334155;
+            border-radius: 10px;
+            color: #f1f5f9;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+        
+        input[type="email"]::placeholder {
+            color: #64748b;
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+        
+        button.loading .spinner {
+            display: block;
+        }
+        
+        button.loading .btn-text {
+            display: none;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .security-note {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        
+        .security-note i {
+            margin-right: 5px;
+        }
+        
+        .success-message {
+            display: none;
+            padding: 20px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .success-message h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+        
+        .success-message p {
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-container">
+        <div class="logo">🔐</div>
+        <h1>Secure Access</h1>
+        <p class="subtitle">Tyson Pawley - Interactive AI Resume</p>
+        
+        <form id="accessForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Enter your email to continue"
+                    required
+                    autocomplete="email"
+                >
+                <div class="error-message" id="errorMessage">
+                    Please enter a valid email address.
+                </div>
+            </div>
+            
+            <button type="submit" id="submitBtn">
+                <span class="btn-text">Access Resume</span>
+                <div class="spinner"></div>
+            </button>
+        </form>
+        
+        <div class="success-message" id="successMessage">
+            <h3>✓ Access Granted</h3>
+            <p>Redirecting to resume...</p>
+        </div>
+        
+        <div class="security-note">
+            🔒 Your email is used for access logging only. <br>
+            By accessing this page, you agree to our terms of use.
+        </div>
+    </div>
+
+    <script>
+        // Formspree endpoint for logging access
+        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzdjkapj';
+        
+        // Check if already authenticated
+        if (localStorage.getItem('resumeAccessGranted')) {
+            window.location.href = 'index.html';
+        }
+        
+        const form = document.getElementById('accessForm');
+        const emailInput = document.getElementById('email');
+        const errorMessage = document.getElementById('errorMessage');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            
+            // Validate email
+            if (!email || !isValidEmail(email)) {
+                errorMessage.classList.add('show');
+                emailInput.style.borderColor = '#ef4444';
+                return;
+            }
+            
+            errorMessage.classList.remove('show');
+            emailInput.style.borderColor = '#334155';
+            
+            // Show loading state
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+            
+            // Get visitor info
+            const visitorInfo = {
+                timestamp: new Date().toISOString(),
+                email: email,
+                userAgent: navigator.userAgent,
+                language: navigator.language,
+                platform: navigator.platform,
+                screenSize: `${window.screen.width}x${window.screen.height}`,
+                referrer: document.referrer || 'Direct',
+                page: 'Splash Page - Access Request'
+            };
+            
+            try {
+                // Log to Formspree
+                await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `🔐 Resume Access Request\\n\\nEmail: ${email}\\nTime: ${new Date().toLocaleString()}`,
+                        visitor: visitorInfo,
+                        _subject: '🔐 Resume Access Request',
+                        email: email
+                    })
+                });
+                
+                // Store access granted
+                localStorage.setItem('resumeAccessGranted', 'true');
+                localStorage.setItem('visitorEmail', email);
+                
+                // Show success
+                form.style.display = 'none';
+                successMessage.classList.add('show');
+                
+                // Redirect after short delay
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                // Still grant access even if logging fails
+                localStorage.setItem('resumeAccessGranted', 'true');
+                localStorage.setItem('visitorEmail', email);
+                window.location.href = 'index.html';
+            }
+        });
+        
+        function isValidEmail(email) {
+            const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Clear error on input
+        emailInput.addEventListener('input', function() {
+            errorMessage.classList.remove('show');
+            emailInput.style.borderColor = '#334155';
+        });
+    </script>
+</body>
+</html>

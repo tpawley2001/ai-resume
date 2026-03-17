@@ -12,9 +12,13 @@
         return;
     }
     
+    // Get visitor email from splash page
+    const visitorEmail = localStorage.getItem('visitorEmail') || 'Unknown';
+    
     // Get visitor info
     const visitorInfo = {
         timestamp: new Date().toISOString(),
+        email: visitorEmail,
         userAgent: navigator.userAgent,
         language: navigator.language,
         platform: navigator.platform,
@@ -27,6 +31,7 @@
     const message = `
 🎯 Resume Visitor Alert!
 
+👤 Visitor: ${visitorEmail}
 📅 Time: ${new Date().toLocaleString()}
 🌐 Source: ${visitorInfo.referrer}
 💻 Platform: ${visitorInfo.platform}
