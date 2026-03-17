@@ -50,10 +50,8 @@ Someone is checking out your resume!
     // Sign up at formspree.io and replace with your form ID
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
     
-    // Send to Vercel API endpoint
-    const API_ENDPOINT = window.location.hostname.includes('vercel.app') 
-        ? '/api/notify' 
-        : 'https://ai-resume-api.vercel.app/api/notify'; // Fallback to custom domain
+    // Send to local notification server
+    const API_ENDPOINT = 'http://localhost:3002/api/notify';
     
     fetch(API_ENDPOINT, {
         method: 'POST',
