@@ -306,19 +306,35 @@ const AI_KNOWLEDGE = {
             // Customer Service/Support Keywords
             "customer service": { match: true, strength: "expert", years: 16 },
             "customer support": { match: true, strength: "expert", years: 16 },
+            "customer care": { match: true, strength: "expert", years: 16 },
+            "customer care representative": { match: true, strength: "expert", years: 16 },
             "technical support": { match: true, strength: "advanced", years: 10 },
             "help desk": { match: true, strength: "advanced", years: 10 },
             "provider relations": { match: true, strength: "expert", years: 16 },
             "provider services": { match: true, strength: "expert", years: 16 },
             "member services": { match: true, strength: "expert", years: 16 },
             "call center": { match: true, strength: "expert", years: 16 },
+            "phone support": { match: true, strength: "expert", years: 16 },
+            "chat support": { match: true, strength: "expert", years: 16 },
             "issue resolution": { match: true, strength: "expert", years: 16 },
+            "escalation": { match: true, strength: "expert", years: 16 },
             "troubleshooting": { match: true, strength: "advanced", years: 10 },
             "training": { match: true, strength: "expert", years: 16 },
             "mentoring": { match: true, strength: "expert", years: 16 },
             "staff development": { match: true, strength: "expert", years: 16 },
             "onboarding": { match: true, strength: "expert", years: 16 },
             "documentation": { match: true, strength: "expert", years: 16 },
+            "benefits": { match: true, strength: "expert", years: 16 },
+            "eligibility": { match: true, strength: "expert", years: 16 },
+            "phi": { match: true, strength: "expert", years: 16 },
+            "protected health information": { match: true, strength: "expert", years: 16 },
+            "confidentiality": { match: true, strength: "expert", years: 16 },
+            "hipaa": { match: true, strength: "expert", years: 16 },
+            "crm": { match: true, strength: "expert", years: 16 },
+            "kpi": { match: true, strength: "expert", years: 16 },
+            "performance indicators": { match: true, strength: "expert", years: 16 },
+            "bilingual": { match: true, strength: "beginner", years: 2 },
+            "spanish": { match: true, strength: "beginner", years: 2 },
             // IT/Systems Keywords
             "it support": { match: true, strength: "advanced", years: 10 },
             "systems analyst": { match: true, strength: "advanced", years: 10 },
@@ -355,11 +371,13 @@ const AI_KNOWLEDGE = {
         }
         
         // Calculate fit percentage with weighted scoring
-        // Operations/PM skills get higher weight
+        // Operations/PM/Customer Service skills get higher weight
         const highValueSkills = ['project manager', 'operations manager', 'operations', 'cross-functional', 
                                 'process improvement', 'project planning', 'project execution', 'leadership',
                                 'team lead', 'stakeholder', 'risk mitigation', 'continuous improvement',
-                                'healthcare', 'claims', 'data analyst'];
+                                'healthcare', 'claims', 'data analyst', 'customer service', 'customer care',
+                                'customer care representative', 'provider relations', 'call center', 
+                                'issue resolution', 'escalation', 'benefits', 'eligibility'];
         
         let weightedScore = 0;
         let maxPossibleScore = 0;
