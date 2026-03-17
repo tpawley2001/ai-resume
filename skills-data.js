@@ -61,6 +61,24 @@ const RESUME_DATA = {
             { name: "Budget Management", level: 85, icon: "fa-dollar-sign" },
             { name: "Risk Mitigation", level: 88, icon: "fa-shield-alt" },
             { name: "Stakeholder Communication", level: 90, icon: "fa-comments" }
+        ],
+        
+        claims: [
+            { name: "Claims Processing", level: 95, icon: "fa-file-medical" },
+            { name: "Claims Auditing", level: 90, icon: "fa-search" },
+            { name: "Claims Adjustments", level: 88, icon: "fa-balance-scale" },
+            { name: "COB/TPA", level: 85, icon: "fa-handshake" },
+            { name: "Quality Assurance", level: 90, icon: "fa-check-circle" },
+            { name: "Regulatory Compliance", level: 92, icon: "fa-gavel" }
+        ],
+        
+        customerservice: [
+            { name: "Customer Support", level: 90, icon: "fa-headset" },
+            { name: "Issue Resolution", level: 92, icon: "fa-wrench" },
+            { name: "Provider Relations", level: 88, icon: "fa-user-md" },
+            { name: "Training & Development", level: 90, icon: "fa-chalkboard-teacher" },
+            { name: "Documentation", level: 88, icon: "fa-file-alt" },
+            { name: "Communication", level: 92, icon: "fa-comments" }
         ]
     },
     
@@ -105,7 +123,20 @@ const RESUME_DATA = {
             tags: ["Team Leadership", "Claims Processing", "Operations"]
         },
         {
-            title: "Operations Manager, Claims",
+            title: "Claims IT Applications Engineer",
+            company: "Kaiser Permanente",
+            location: "Spokane, WA",
+            date: "February 2007 – November 2023",
+            description: "Designed and implemented claims reporting tools for regulatory compliance and executive decision-making. Automated data processes to improve accuracy and reduce processing time. Conducted quality assurance testing for new implementations and claims systems.",
+            highlights: [
+                "Designed and maintained claims reporting systems",
+                "Automated processes to maximize efficiency and reduce errors",
+                "Conducted in-depth analysis to identify trends and optimize operations"
+            ],
+            tags: ["Applications Engineer", "Claims", "Reporting", "Automation"]
+        },
+        {
+            title: "Claims Operations Manager",
             company: "Kaiser Permanente",
             location: "Spokane, WA",
             date: "February 2007 – November 2023",
@@ -113,10 +144,35 @@ const RESUME_DATA = {
             highlights: [
                 "Achieved 20% inventory reduction through process improvements",
                 "Led cross-functional teams in operational planning and execution",
-                "Analyzed operational processes and recommended efficiency improvements",
-                "Utilized data analysis tools to make data-driven decisions"
+                "Analyzed operational processes and recommended efficiency improvements"
             ],
             tags: ["Operations Management", "Project Management", "Claims", "Leadership"]
+        },
+        {
+            title: "Provider Assistance Unit Customer Service Specialist",
+            company: "Kaiser Permanente",
+            location: "Spokane, WA",
+            date: "February 2007 – November 2023",
+            description: "Responded to provider inquiries about claims, contracts, and referral statuses. Processed claims ensuring accuracy and compliance with contractual terms. Acted as liaison between providers and internal departments to resolve issues promptly.",
+            highlights: [
+                "Developed training materials and conducted onboarding sessions",
+                "Provided ongoing documentation updates to improve team efficiency",
+                "Resolved provider issues and ensured customer satisfaction"
+            ],
+            tags: ["Customer Service", "Provider Relations", "Claims", "Training"]
+        },
+        {
+            title: "Trainer / Acting Supervisor",
+            company: "Delta Dental Plan of California",
+            location: "California",
+            date: "March 2000 – February 2007",
+            description: "Trained and supervised claims processing teams, enhancing accuracy and productivity. Conducted data analysis to ensure claims compliance and resolve discrepancies. Created training materials to enhance understanding of data and reporting processes.",
+            highlights: [
+                "Trained team members in customer service and claims processing",
+                "Assisted customers with claim inquiries and processed outstanding claims",
+                "Supervised teams to enhance accuracy and productivity"
+            ],
+            tags: ["Training", "Supervision", "Claims Processing", "Customer Service"]
         }
     ],
     
@@ -227,7 +283,63 @@ const AI_KNOWLEDGE = {
             "quality assurance": { match: true, strength: "expert", years: 16 },
             "project planning": { match: true, strength: "expert", years: 16 },
             "project execution": { match: true, strength: "expert", years: 16 },
-            "edi": { match: true, strength: "expert", years: 16 }
+            "edi": { match: true, strength: "expert", years: 16 },
+            // Claims Processing Keywords
+            "claims processing": { match: true, strength: "expert", years: 16 },
+            "claims auditor": { match: true, strength: "expert", years: 16 },
+            "claims examiner": { match: true, strength: "expert", years: 16 },
+            "claims specialist": { match: true, strength: "expert", years: 16 },
+            "claims analyst": { match: true, strength: "expert", years: 16 },
+            "claims adjudication": { match: true, strength: "expert", years: 16 },
+            "claims adjustment": { match: true, strength: "expert", years: 16 },
+            "medical claims": { match: true, strength: "expert", years: 16 },
+            "dental claims": { match: true, strength: "expert", years: 7 },
+            "coordination of benefits": { match: true, strength: "expert", years: 16 },
+            "cob": { match: true, strength: "expert", years: 16 },
+            "third party liability": { match: true, strength: "expert", years: 16 },
+            "tpl": { match: true, strength: "expert", years: 16 },
+            "subrogation": { match: true, strength: "advanced", years: 10 },
+            "recovery": { match: true, strength: "advanced", years: 10 },
+            "overpayment": { match: true, strength: "expert", years: 16 },
+            "audit": { match: true, strength: "expert", years: 16 },
+            "quality assurance": { match: true, strength: "expert", years: 16 },
+            // Customer Service/Support Keywords
+            "customer service": { match: true, strength: "expert", years: 16 },
+            "customer support": { match: true, strength: "expert", years: 16 },
+            "technical support": { match: true, strength: "advanced", years: 10 },
+            "help desk": { match: true, strength: "advanced", years: 10 },
+            "provider relations": { match: true, strength: "expert", years: 16 },
+            "provider services": { match: true, strength: "expert", years: 16 },
+            "member services": { match: true, strength: "expert", years: 16 },
+            "call center": { match: true, strength: "expert", years: 16 },
+            "issue resolution": { match: true, strength: "expert", years: 16 },
+            "troubleshooting": { match: true, strength: "advanced", years: 10 },
+            "training": { match: true, strength: "expert", years: 16 },
+            "mentoring": { match: true, strength: "expert", years: 16 },
+            "staff development": { match: true, strength: "expert", years: 16 },
+            "onboarding": { match: true, strength: "expert", years: 16 },
+            "documentation": { match: true, strength: "expert", years: 16 },
+            // IT/Systems Keywords
+            "it support": { match: true, strength: "advanced", years: 10 },
+            "systems analyst": { match: true, strength: "advanced", years: 10 },
+            "applications engineer": { match: true, strength: "expert", years: 16 },
+            "systems engineer": { match: true, strength: "advanced", years: 10 },
+            "business analyst": { match: true, strength: "expert", years: 10 },
+            "reporting tools": { match: true, strength: "expert", years: 16 },
+            "dashboard": { match: true, strength: "expert", years: 10 },
+            "automation": { match: true, strength: "expert", years: 16 },
+            "workflow": { match: true, strength: "expert", years: 16 },
+            // Management Keywords
+            "supervisor": { match: true, strength: "expert", years: 16 },
+            "manager": { match: true, strength: "expert", years: 16 },
+            "director": { match: true, strength: "advanced", years: 5 },
+            "administrator": { match: true, strength: "expert", years: 10 },
+            "administrative": { match: true, strength: "expert", years: 10 },
+            "team lead": { match: true, strength: "expert", years: 16 },
+            "team management": { match: true, strength: "expert", years: 16 },
+            "performance management": { match: true, strength: "expert", years: 16 },
+            "coaching": { match: true, strength: "expert", years: 16 },
+            "workforce": { match: true, strength: "expert", years: 16 }
         };
         
         const jobLower = jobDescription.toLowerCase();
@@ -242,15 +354,31 @@ const AI_KNOWLEDGE = {
             }
         }
         
-        // Calculate fit percentage
-        const fitPercentage = Math.min(95, Math.round((matched.length / Object.keys(keywords).length) * 200));
+        // Calculate fit percentage with weighted scoring
+        // Operations/PM skills get higher weight
+        const highValueSkills = ['project manager', 'operations manager', 'operations', 'cross-functional', 
+                                'process improvement', 'project planning', 'project execution', 'leadership',
+                                'team lead', 'stakeholder', 'risk mitigation', 'continuous improvement',
+                                'healthcare', 'claims', 'data analyst'];
+        
+        let weightedScore = 0;
+        let maxPossibleScore = 0;
+        
+        matched.forEach(m => {
+            const weight = highValueSkills.includes(m.skill) ? 2 : 1;
+            weightedScore += (m.years * 10 * weight);
+        });
+        
+        // Calculate percentage based on weighted matches
+        const fitPercentage = Math.min(98, Math.round(40 + (matched.length * 3) + (weightedScore / 50)));
         
         return {
             fitPercentage,
             matched,
-            recommendation: fitPercentage > 80 ? "Excellent fit" : 
-                          fitPercentage > 60 ? "Good fit" : 
-                          fitPercentage > 40 ? "Moderate fit" : "May not be ideal"
+            recommendation: fitPercentage >= 90 ? "Excellent fit - Strongly recommend" : 
+                          fitPercentage >= 75 ? "Very good fit" : 
+                          fitPercentage >= 60 ? "Good fit" : 
+                          fitPercentage >= 40 ? "Moderate fit" : "May not be ideal"
         };
     },
     
