@@ -6,13 +6,13 @@
 const RESUME_DATA = {
     personal: {
         name: "Tyson Pawley",
-        title: "Operations Project Manager | Data Analyst | Healthcare IT",
+        title: "Operations Project Manager | Data Analyst | Healthcare IT | AI Model Tester",
         email: "tpawley2001@gmail.com",
         phone: "509-263-6457",
         location: "Spokane, WA",
         linkedin: "https://linkedin.com/in/tysonpawley",
         github: "https://github.com/tpawley2001",
-        summary: "Strategic Operations Project Manager with 16+ years of healthcare industry experience specializing in employee benefits, insurance, and provider network operations. Proven expertise in leading operational initiatives from planning through execution, driving process improvements that increased efficiency by 20%. Skilled in cross-functional team collaboration, data analysis and reporting tools, and regulatory compliance. Demonstrated ability to work in ambiguous, innovative environments while delivering projects on time, within scope, and within budget."
+        summary: "Strategic Operations Project Manager with 16+ years of healthcare industry experience specializing in employee benefits, insurance, and provider network operations. Proven expertise in leading operational initiatives from planning through execution, driving process improvements that increased efficiency by 20%. Skilled in cross-functional team collaboration, data analysis and reporting tools, and regulatory compliance. Experienced in AI model testing and evaluation, with strong skills in prompt engineering, LLM testing, and content quality assurance. Demonstrated ability to work in ambiguous, innovative environments while delivering projects on time, within scope, and within budget."
     },
     
     skills: {
@@ -79,6 +79,17 @@ const RESUME_DATA = {
             { name: "Training & Development", level: 90, icon: "fa-chalkboard-teacher" },
             { name: "Documentation", level: 88, icon: "fa-file-alt" },
             { name: "Communication", level: 92, icon: "fa-comments" }
+        ],
+        
+        aiTesting: [
+            { name: "Prompt Engineering", level: 88, icon: "fa-robot" },
+            { name: "AI Model Testing", level: 90, icon: "fa-vial" },
+            { name: "LLM Evaluation", level: 85, icon: "fa-brain" },
+            { name: "Chatbot Testing", level: 88, icon: "fa-comments" },
+            { name: "Content Quality Assurance", level: 90, icon: "fa-check-double" },
+            { name: "Natural Language Processing", level: 82, icon: "fa-language" },
+            { name: "Test Case Design", level: 88, icon: "fa-clipboard-check" },
+            { name: "Regression Testing", level: 85, icon: "fa-undo" }
         ]
     },
     
