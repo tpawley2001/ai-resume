@@ -90,6 +90,16 @@ const RESUME_DATA = {
             { name: "Natural Language Processing", level: 82, icon: "fa-language" },
             { name: "Test Case Design", level: 88, icon: "fa-clipboard-check" },
             { name: "Regression Testing", level: 85, icon: "fa-undo" }
+        ],
+        
+        agenticSystems: [
+            { name: "Multi-Agent Decomposition", level: 85, icon: "fa-sitemap" },
+            { name: "Scope Matching", level: 88, icon: "fa-bullseye" },
+            { name: "Failure Pattern Recognition", level: 82, icon: "fa-exclamation-triangle" },
+            { name: "Trust & Security Design", level: 80, icon: "fa-shield-alt" },
+            { name: "Context Architecture", level: 85, icon: "fa-layer-group" },
+            { name: "Specification Precision", level: 90, icon: "fa-file-contract" },
+            { name: "Evaluation & Quality Judgment", level: 88, icon: "fa-balance-scale" }
         ]
     },
     
@@ -477,7 +487,25 @@ const AI_KNOWLEDGE = {
             "analytical development": { match: true, strength: "beginner", years: 1 },
             "home based": { match: true, strength: "expert", years: 16 },
             "remote": { match: true, strength: "expert", years: 16 },
-            "hybrid": { match: true, strength: "expert", years: 10 }
+            "hybrid": { match: true, strength: "expert", years: 10 },
+            // Agentic Systems Keywords
+            "multi-agent": { match: true, strength: "advanced", years: 2 },
+            "agent": { match: true, strength: "advanced", years: 2 },
+            "agentic": { match: true, strength: "advanced", years: 2 },
+            "decomposition": { match: true, strength: "advanced", years: 2 },
+            "delegation": { match: true, strength: "advanced", years: 2 },
+            "context window": { match: true, strength: "advanced", years: 2 },
+            "context architecture": { match: true, strength: "advanced", years: 2 },
+            "prompt engineering": { match: true, strength: "advanced", years: 2 },
+            "llm": { match: true, strength: "advanced", years: 2 },
+            "large language model": { match: true, strength: "advanced", years: 2 },
+            "failure pattern": { match: true, strength: "intermediate", years: 2 },
+            "trust design": { match: true, strength: "intermediate", years: 2 },
+            "security design": { match: true, strength: "intermediate", years: 2 },
+            "specification": { match: true, strength: "advanced", years: 5 },
+            "requirements": { match: true, strength: "expert", years: 10 },
+            "quality judgment": { match: true, strength: "advanced", years: 5 },
+            "evaluation": { match: true, strength: "advanced", years: 5 }
         };
         
         const jobLower = jobDescription.toLowerCase();
