@@ -261,6 +261,22 @@ function renderSkills() {
         toolsContainer.appendChild(createSkillTag(skill));
     });
     
+    // AI Testing Skills
+    const aiContainer = document.getElementById('aiTestingSkills');
+    if (aiContainer && RESUME_DATA.skills.aiTesting) {
+        RESUME_DATA.skills.aiTesting.forEach(skill => {
+            aiContainer.appendChild(createSkillTag(skill));
+        });
+    }
+    
+    // Agentic Systems Skills
+    const agenticContainer = document.getElementById('agenticSkills');
+    if (agenticContainer && RESUME_DATA.skills.agenticSystems) {
+        RESUME_DATA.skills.agenticSystems.forEach(skill => {
+            agenticContainer.appendChild(createSkillTag(skill));
+        });
+    }
+    
     // Proficiency Chart
     renderProficiencyChart();
 }
