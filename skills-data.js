@@ -259,6 +259,9 @@ const RESUME_DATA = {
     ],
     
     certifications: [
+        { name: "Google AI Professional Certificate", issuer: "Google", date: "2026", 
+          details: "7 courses: AI Fundamentals, AI for Brainstorming & Planning, AI for Research & Insights, AI for Writing & Communication, AI for Content Creation, AI for Data Analysis, AI for App Building. Built 20+ AI artifacts and vibe-coded custom AI solutions.",
+          verifyUrl: "https://coursera.org/verify/professional-cert/QBZI8MSZMAX8" },
         { name: "Tableau Desktop Specialist", issuer: "Tableau", date: "2022" },
         { name: "AWS Cloud Practitioner", issuer: "Amazon Web Services", date: "2023" },
         { name: "Epic Clarity Data Model", issuer: "Epic Systems", date: "2023" }
