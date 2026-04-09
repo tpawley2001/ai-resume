@@ -109,11 +109,11 @@ const RESUME_DATA = {
             company: "First Choice Health",
             location: "Remote",
             date: "February 2025 – Present",
-            description: "Lead analysis of existing operational processes for EDI claims routing, recommending improvements to increase efficiency and reduce costs. Collaborate cross-functionally with multiple departments to ensure smooth claims operations and project execution.",
+            description: "Routes and processes incoming EDI claims to ensure accurate data entry and adjudication. Manages correspondence triage and customer inquiries regarding claim status.",
             highlights: [
-                "Utilize data analysis and reporting tools to gather insights into operations performance",
-                "Ensure claims products meet quality standards and compliance requirements",
-                "Maintain detailed documentation for claims processing procedures"
+                "Ensure accurate EDI claims routing and adjudication outcomes",
+                "Manage correspondence triage and resolve customer inquiries on claim status",
+                "Maintain compliance standards for claims data entry and processing"
             ],
             tags: ["EDI", "Claims Operations", "Process Improvement", "Healthcare"]
         },
@@ -122,11 +122,11 @@ const RESUME_DATA = {
             company: "WA State US Bowling Congress",
             location: "Spokane, WA",
             date: "August 2024 – August 2025",
-            description: "Lead project management of organizational initiatives, owning planning, execution, and closing of projects on time and within budget. Identify potential risks and develop strategies to mitigate them for tournament operations.",
+            description: "Oversaw financial support, bookkeeping, and tournament direction for the Washington State division of the US Bowling Congress.",
             highlights: [
-                "Facilitate clear communication between teams, stakeholders, and leadership",
-                "Manage tournament operations and logistics",
-                "Drive continuous improvement in organizational processes"
+                "Managed organizational finances and bookkeeping",
+                "Directed tournament operations and logistics at the state level",
+                "Supported strategic planning and compliance for USBC programs"
             ],
             tags: ["Project Management", "Event Operations", "Leadership"]
         },
