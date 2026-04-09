@@ -257,9 +257,11 @@ function renderSkills() {
     
     // Tools Skills
     const toolsContainer = document.getElementById('toolsSkills');
-    RESUME_DATA.skills.tools.forEach(skill => {
-        toolsContainer.appendChild(createSkillTag(skill));
-    });
+    if (toolsContainer && RESUME_DATA.skills.tools) {
+        RESUME_DATA.skills.tools.forEach(skill => {
+            toolsContainer.appendChild(createSkillTag(skill));
+        });
+    }
     
     // AI Testing Skills
     const aiContainer = document.getElementById('aiTestingSkills');
