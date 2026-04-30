@@ -26,7 +26,7 @@ A modern, interactive resume website with an AI assistant that helps visitors un
 
 ## Live Demo
 
-Visit the live site: [https://tysonpawley.github.io/ai-resume](https://tysonpawley.github.io/ai-resume)
+Visit the live site: [https://tpawley2001.github.io/ai-resume](https://tpawley2001.github.io/ai-resume)
 
 ## How to Use
 
@@ -51,7 +51,7 @@ Visit the live site: [https://tysonpawley.github.io/ai-resume](https://tysonpawl
 #### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/tysonpawley/ai-resume.git
+git clone https://github.com/tpawley2001/ai-resume.git
 
 # Navigate to project
 cd ai-resume
@@ -151,7 +151,7 @@ MIT License - feel free to use this template for your own resume!
 
 - **Email**: tpawley2001@gmail.com
 - **LinkedIn**: [linkedin.com/in/tysonpawley](https://linkedin.com/in/tysonpawley)
-- **GitHub**: [github.com/tysonpawley](https://github.com/tysonpawley)
+- **GitHub**: [github.com/tpawley2001](https://github.com/tpawley2001)
 
 ---
 
