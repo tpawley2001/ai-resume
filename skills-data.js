@@ -157,6 +157,47 @@ const RESUME_DATA = {
             tags: ["Applications Engineer", "Claims", "Reporting", "Automation"]
         },
         {
+            title: "Lead Business Consultant Analyst",
+            company: "Kaiser Permanente",
+            location: "Spokane, WA",
+            date: "February 2007 – November 2023",
+            description: "Served as Lead Informaticist for Executive Leadership, providing strategic claims processing and efficiency reporting. Facilitated payment policy implementation, working cross-functionally with stakeholders and IT to ensure successful execution. Acted as the main contact between Claims IT departments and the Claims business unit, and consulted as a Subject Matter Expert.",
+            highlights: [
+                "Provided executive-level claims processing and efficiency reporting",
+                "Facilitated payment policy implementation with stakeholders and IT",
+                "Served as main contact between Claims IT and Claims business units",
+                "Led COVID-19 mitigation efforts and provided financial reporting to the CFO",
+                "Consulted as Subject Matter Expert on claims operations"
+            ],
+            tags: ["Business Analysis", "Healthcare IT", "Leadership", "Strategic Reporting"]
+        },
+        {
+            title: "Administrative Analyst II",
+            company: "Kaiser Permanente",
+            location: "Spokane, WA",
+            date: "February 2007 – November 2023",
+            description: "Performed claims data analysis and reporting to support operational decision-making and process improvement. Managed projects from initiation through completion. Conducted regulatory research and reporting to maintain organizational compliance.",
+            highlights: [
+                "Analyzed claims data and generated operational reports",
+                "Managed projects supporting claims and operational goals",
+                "Conducted regulatory research and ensured compliance reporting"
+            ],
+            tags: ["Data Analysis", "Project Management", "Regulatory Compliance", "Reporting"]
+        },
+        {
+            title: "Operations Supervisor - Closed File Review & Code Review",
+            company: "Kaiser Permanente",
+            location: "Spokane, WA",
+            date: "February 2007 – November 2023",
+            description: "Supervised the Closed File Review and Code Review unit, managing claims inventory and coaching staff towards cost-containment goals. Implemented automated tracking systems for the Code Review unit.",
+            highlights: [
+                "Implemented automated tracking for Code Review Unit",
+                "Managed claims inventory and departmental workflows",
+                "Coached staff towards cost-containment and quality goals"
+            ],
+            tags: ["Supervision", "Quality Assurance", "Claims Auditing", "Process Improvement"]
+        },
+        {
             title: "Claims Operations Manager",
             company: "Kaiser Permanente",
             location: "Spokane, WA",
