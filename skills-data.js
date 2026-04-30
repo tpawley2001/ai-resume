@@ -219,7 +219,7 @@ const RESUME_DATA = {
                 "AI-powered resume tailoring for each position",
                 "Applied to 1000+ positions with 2% response rate"
             ],
-            github: "https://github.com/tysonpawley/job-automation",
+            github: "https://github.com/tpawley2001/job-automation",
             demo: null
         },
         {
