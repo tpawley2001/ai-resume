@@ -206,32 +206,44 @@ function analyzeJobPosting(jobDescription) {
     const analysis = AI_KNOWLEDGE.analyzeJobFit(jobDescription);
     
     let response = `## Job Fit Analysis\n\n`;
+
+    if (analysis.matched.length === 0 && analysis.missing.length === 0) {
+        return response + `I couldn't find anything in that text I can speak to. Paste the full job description — requirements and responsibilities — and I'll give you a straight answer.`;
+    }
+
     response += `**Overall Match: ${analysis.fitPercentage}%** - ${analysis.recommendation}\n\n`;
-    
+
     if (analysis.matched.length > 0) {
-        response += `**Matching Skills:**\n`;
+        response += `**Where he matches:**\n`;
         analysis.matched.forEach(match => {
-            const emoji = match.strength === 'expert' ? '⭐' : 
-                         match.strength === 'advanced' ? '✓' : '○';
+            const emoji = match.strength === 'expert' ? '⭐' :
+                         match.strength === 'proficient' ? '✓' : '○';
             response += `${emoji} **${match.skill}** (${match.strength}, ${match.years} years)\n`;
         });
         response += `\n`;
     }
-    
-    response += `**Why Tyson is a strong candidate:**\n`;
-    response += `• ${analysis.matched.length}+ relevant skills match this role\n`;
-    response += `• Healthcare data analysis expertise\n`;
-    response += `• Proven automation and efficiency improvements\n`;
-    response += `• Strong SQL and visualization skills\n\n`;
-    
-    if (analysis.fitPercentage >= 80) {
-        response += `**Recommendation:** Tyson would be an **excellent fit** for this position. His healthcare experience and technical skills align very well with the requirements.`;
-    } else if (analysis.fitPercentage >= 60) {
-        response += `**Recommendation:** Tyson is a **good fit** for this role. While there may be some areas to grow into, his core skills and experience make him a strong candidate.`;
-    } else {
-        response += `**Recommendation:** This role may not be the best match for Tyson's current skill set, but he's a quick learner and could adapt given the opportunity.`;
+
+    // Gaps are reported, not hidden. This is the honest half of the answer.
+    if (analysis.missing.length > 0) {
+        response += `**Where he doesn't:**\n`;
+        analysis.missing.forEach(gap => {
+            response += `✗ **${gap.requirement}** — ${gap.note}\n`;
+        });
+        response += `\n`;
     }
-    
+
+    if (analysis.matched.length === 0) {
+        response += `**Recommendation:** This role asks for things Tyson doesn't have. He'd be misrepresenting himself to apply, and I won't pretend otherwise.`;
+    } else if (analysis.fitPercentage >= 80) {
+        response += `**Recommendation:** Strong match. His claims, operations, and healthcare background line up directly with this role.`;
+    } else if (analysis.fitPercentage >= 60) {
+        response += `**Recommendation:** Good match on the core requirements, with some areas he'd be growing into. Worth a conversation.`;
+    } else if (analysis.fitPercentage >= 40) {
+        response += `**Recommendation:** Partial match. There's real overlap, but also real gaps — worth reading the list above before deciding.`;
+    } else {
+        response += `**Recommendation:** Probably not the right role for him. The overlap is thin.`;
+    }
+
     return response;
 }
 
@@ -286,29 +298,43 @@ function renderSkills() {
 function createSkillTag(skill) {
     const tag = document.createElement('span');
     tag.className = 'skill-tag';
-    tag.innerHTML = `<i class="fas ${skill.icon}"></i> ${skill.name}`;
+    tag.title = `${skill.tier} — ${TIER_MEANING[skill.tier] || ''}`;
+    tag.innerHTML = `<i class="fas ${skill.icon}"></i> ${skill.name} <em class="skill-tier">${skill.tier}</em>`;
     return tag;
 }
 
+// Honest groupings rather than invented percentages.
+const TIER_MEANING = {
+    "Expert": "years of daily professional use",
+    "Proficient": "used regularly to ship real work",
+    "Working": "productive, still learning"
+};
+const TIER_ORDER = { "Expert": 0, "Proficient": 1, "Working": 2 };
+
 function renderProficiencyChart() {
     const chart = document.getElementById('proficiencyChart');
-    const topSkills = [
+    const all = [
         ...RESUME_DATA.skills.dataAnalysis,
         ...RESUME_DATA.skills.programming
-    ].sort((a, b) => b.level - a.level).slice(0, 8);
-    
-    topSkills.forEach(skill => {
+    ];
+
+    // De-duplicate (SQL appears in both lists), then group by tier.
+    const seen = new Set();
+    const unique = all.filter(s => !seen.has(s.name) && seen.add(s.name));
+    unique.sort((a, b) => TIER_ORDER[a.tier] - TIER_ORDER[b.tier]);
+
+    let currentTier = null;
+    unique.forEach(skill => {
+        if (skill.tier !== currentTier) {
+            currentTier = skill.tier;
+            const heading = document.createElement('div');
+            heading.className = 'proficiency-tier-heading';
+            heading.innerHTML = `<strong>${skill.tier}</strong> <span>${TIER_MEANING[skill.tier]}</span>`;
+            chart.appendChild(heading);
+        }
         const item = document.createElement('div');
         item.className = 'proficiency-item';
-        item.innerHTML = `
-            <div class="proficiency-header">
-                <span>${skill.name}</span>
-                <span>${skill.level}%</span>
-            </div>
-            <div class="proficiency-bar">
-                <div class="proficiency-fill" style="width: ${skill.level}%"></div>
-            </div>
-        `;
+        item.innerHTML = `<div class="proficiency-header"><span>${skill.name}</span></div>`;
         chart.appendChild(item);
     });
 }

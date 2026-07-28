@@ -12,94 +12,90 @@ const RESUME_DATA = {
         location: "Spokane, WA",
         linkedin: "https://linkedin.com/in/tysonpawley",
         github: "https://github.com/tpawley2001",
-        summary: "Strategic Operations Project Manager with 16+ years of healthcare industry experience specializing in employee benefits, insurance, and provider network operations. Proven expertise in leading operational initiatives from planning through execution, driving process improvements that increased efficiency by 20%. Skilled in cross-functional team collaboration, data analysis and reporting tools, and regulatory compliance. Experienced in AI model testing and evaluation, with strong skills in prompt engineering, LLM testing, and content quality assurance. Demonstrated ability to work in ambiguous, innovative environments while delivering projects on time, within scope, and within budget."
+        summary: "Claims and operations professional with 23 years in healthcare — 16 at Kaiser Permanente, progressing from provider support through operations management into claims IT engineering, plus 7 years in dental claims at Delta Dental. Builds the automation he used to request: VBA, SQL, and Python for claims reporting and regulatory compliance at work, and a portfolio of self-hosted tools and AI agent pipelines outside it. Comfortable in ambiguous environments, and direct about what he does and doesn't know."
     },
     
+    // Tiers, not invented percentages:
+    //   "Expert"     — years of daily professional use
+    //   "Proficient" — used regularly to ship real work
+    //   "Working"    — can be productive, still learning
     skills: {
         dataAnalysis: [
-            { name: "SQL", level: 95, icon: "fa-database" },
-            { name: "Tableau", level: 90, icon: "fa-chart-bar" },
-            { name: "Power BI", level: 88, icon: "fa-chart-pie" },
-            { name: "Python (Pandas)", level: 92, icon: "fa-python" },
-            { name: "Data Visualization", level: 90, icon: "fa-eye" },
-            { name: "Statistical Analysis", level: 85, icon: "fa-calculator" },
-            { name: "ETL Processes", level: 88, icon: "fa-exchange-alt" },
-            { name: "Excel (Advanced)", level: 95, icon: "fa-file-excel" }
+            { name: "SQL", tier: "Expert", icon: "fa-database" },
+            { name: "Excel / VBA", tier: "Expert", icon: "fa-file-excel" },
+            { name: "Python (Pandas)", tier: "Proficient", icon: "fa-python" },
+            { name: "Tableau", tier: "Proficient", icon: "fa-chart-bar" },
+            { name: "Power BI", tier: "Working", icon: "fa-chart-pie" },
+            { name: "Data Visualization", tier: "Proficient", icon: "fa-eye" },
+            { name: "ETL / Data Pipelines", tier: "Proficient", icon: "fa-exchange-alt" }
         ],
-        
+
         programming: [
-            { name: "Python", level: 90, icon: "fa-python" },
-            { name: "SQL", level: 95, icon: "fa-database" },
-            { name: "JavaScript", level: 75, icon: "fa-js" },
-            { name: "HTML/CSS", level: 80, icon: "fa-html5" },
-            { name: "R", level: 70, icon: "fa-chart-line" },
-            { name: "Bash/Shell", level: 78, icon: "fa-terminal" }
+            { name: "Python", tier: "Proficient", icon: "fa-python" },
+            { name: "SQL", tier: "Expert", icon: "fa-database" },
+            { name: "VBA", tier: "Expert", icon: "fa-file-code" },
+            { name: "JavaScript / TypeScript", tier: "Working", icon: "fa-js" },
+            { name: "HTML/CSS", tier: "Working", icon: "fa-html5" },
+            { name: "Bash/Shell", tier: "Proficient", icon: "fa-terminal" }
         ],
-        
+
         healthcare: [
-            { name: "Epic Systems", level: 85, icon: "fa-hospital" },
-            { name: "HL7/FHIR", level: 80, icon: "fa-file-medical" },
-            { name: "Clinical Data", level: 88, icon: "fa-user-md" },
-            { name: "Revenue Cycle", level: 82, icon: "fa-dollar-sign" },
-            { name: "HIPAA Compliance", level: 90, icon: "fa-shield-alt" },
-            { name: "Healthcare Analytics", level: 87, icon: "fa-heartbeat" }
+            { name: "Claims Systems", tier: "Expert", icon: "fa-hospital" },
+            { name: "EDI Claims (837/835)", tier: "Expert", icon: "fa-file-medical" },
+            { name: "Revenue Cycle", tier: "Proficient", icon: "fa-dollar-sign" },
+            { name: "HIPAA Compliance", tier: "Expert", icon: "fa-shield-alt" },
+            { name: "Healthcare Analytics", tier: "Proficient", icon: "fa-heartbeat" },
+            { name: "Regulatory Reporting", tier: "Expert", icon: "fa-gavel" }
         ],
-        
+
         tools: [
-            { name: "Git/GitHub", level: 88, icon: "fa-git-alt" },
-            { name: "AWS", level: 75, icon: "fa-cloud" },
-            { name: "Docker", level: 70, icon: "fa-docker" },
-            { name: "Jupyter", level: 90, icon: "fa-book" },
-            { name: "VS Code", level: 92, icon: "fa-code" },
-            { name: "Linux", level: 85, icon: "fa-linux" }
+            { name: "Git/GitHub", tier: "Proficient", icon: "fa-git-alt" },
+            { name: "Linux", tier: "Proficient", icon: "fa-linux" },
+            { name: "Docker", tier: "Working", icon: "fa-docker" },
+            { name: "VS Code", tier: "Proficient", icon: "fa-code" },
+            { name: "systemd / self-hosting", tier: "Proficient", icon: "fa-server" }
         ],
-        
+
         operations: [
-            { name: "Project Management", level: 95, icon: "fa-tasks" },
-            { name: "Cross-Functional Leadership", level: 92, icon: "fa-users" },
-            { name: "Process Improvement", level: 90, icon: "fa-chart-line" },
-            { name: "Budget Management", level: 85, icon: "fa-dollar-sign" },
-            { name: "Risk Mitigation", level: 88, icon: "fa-shield-alt" },
-            { name: "Stakeholder Communication", level: 90, icon: "fa-comments" }
+            { name: "Project Management", tier: "Expert", icon: "fa-tasks" },
+            { name: "Cross-Functional Leadership", tier: "Expert", icon: "fa-users" },
+            { name: "Process Improvement", tier: "Expert", icon: "fa-chart-line" },
+            { name: "Risk Mitigation", tier: "Proficient", icon: "fa-shield-alt" },
+            { name: "Stakeholder Communication", tier: "Expert", icon: "fa-comments" }
         ],
-        
+
         claims: [
-            { name: "Claims Processing", level: 95, icon: "fa-file-medical" },
-            { name: "Claims Auditing", level: 90, icon: "fa-search" },
-            { name: "Claims Adjustments", level: 88, icon: "fa-balance-scale" },
-            { name: "COB/TPA", level: 85, icon: "fa-handshake" },
-            { name: "Quality Assurance", level: 90, icon: "fa-check-circle" },
-            { name: "Regulatory Compliance", level: 92, icon: "fa-gavel" }
+            { name: "Claims Processing", tier: "Expert", icon: "fa-file-medical" },
+            { name: "Claims Auditing", tier: "Expert", icon: "fa-search" },
+            { name: "Claims Adjustments", tier: "Expert", icon: "fa-balance-scale" },
+            { name: "COB / Third-Party Liability", tier: "Expert", icon: "fa-handshake" },
+            { name: "Quality Assurance", tier: "Expert", icon: "fa-check-circle" },
+            { name: "Regulatory Compliance", tier: "Expert", icon: "fa-gavel" }
         ],
-        
+
         customerservice: [
-            { name: "Customer Support", level: 90, icon: "fa-headset" },
-            { name: "Issue Resolution", level: 92, icon: "fa-wrench" },
-            { name: "Provider Relations", level: 88, icon: "fa-user-md" },
-            { name: "Training & Development", level: 90, icon: "fa-chalkboard-teacher" },
-            { name: "Documentation", level: 88, icon: "fa-file-alt" },
-            { name: "Communication", level: 92, icon: "fa-comments" }
+            { name: "Customer Support", tier: "Expert", icon: "fa-headset" },
+            { name: "Issue Resolution", tier: "Expert", icon: "fa-wrench" },
+            { name: "Provider Relations", tier: "Expert", icon: "fa-user-md" },
+            { name: "Training & Development", tier: "Expert", icon: "fa-chalkboard-teacher" },
+            { name: "Documentation", tier: "Proficient", icon: "fa-file-alt" }
         ],
-        
+
         aiTesting: [
-            { name: "Prompt Engineering", level: 88, icon: "fa-robot" },
-            { name: "AI Model Testing", level: 90, icon: "fa-vial" },
-            { name: "LLM Evaluation", level: 85, icon: "fa-brain" },
-            { name: "Chatbot Testing", level: 88, icon: "fa-comments" },
-            { name: "Content Quality Assurance", level: 90, icon: "fa-check-double" },
-            { name: "Natural Language Processing", level: 82, icon: "fa-language" },
-            { name: "Test Case Design", level: 88, icon: "fa-clipboard-check" },
-            { name: "Regression Testing", level: 85, icon: "fa-undo" }
+            { name: "Prompt Engineering", tier: "Proficient", icon: "fa-robot" },
+            { name: "LLM Evaluation & Benchmarking", tier: "Proficient", icon: "fa-brain" },
+            { name: "Local Model Deployment", tier: "Proficient", icon: "fa-microchip" },
+            { name: "Content Quality Assurance", tier: "Proficient", icon: "fa-check-double" },
+            { name: "Test Case Design", tier: "Proficient", icon: "fa-clipboard-check" }
         ],
-        
+
         agenticSystems: [
-            { name: "Multi-Agent Decomposition", level: 85, icon: "fa-sitemap" },
-            { name: "Scope Matching", level: 88, icon: "fa-bullseye" },
-            { name: "Failure Pattern Recognition", level: 82, icon: "fa-exclamation-triangle" },
-            { name: "Trust & Security Design", level: 80, icon: "fa-shield-alt" },
-            { name: "Context Architecture", level: 85, icon: "fa-layer-group" },
-            { name: "Specification Precision", level: 90, icon: "fa-file-contract" },
-            { name: "Evaluation & Quality Judgment", level: 88, icon: "fa-balance-scale" }
+            { name: "Multi-Agent Decomposition", tier: "Proficient", icon: "fa-sitemap" },
+            { name: "Browser Automation (Playwright)", tier: "Proficient", icon: "fa-robot" },
+            { name: "Failure Pattern Recognition", tier: "Proficient", icon: "fa-exclamation-triangle" },
+            { name: "Context Architecture", tier: "Proficient", icon: "fa-layer-group" },
+            { name: "Specification Precision", tier: "Proficient", icon: "fa-file-contract" },
+            { name: "Evaluation & Quality Judgment", tier: "Proficient", icon: "fa-balance-scale" }
         ]
     },
     
@@ -144,84 +140,20 @@ const RESUME_DATA = {
             tags: ["Team Leadership", "Claims Processing", "Operations"]
         },
         {
-            title: "Claims IT Applications Engineer",
+            title: "Claims IT Applications Engineer (most recent of several roles)",
             company: "Kaiser Permanente",
             location: "Spokane, WA",
             date: "February 2007 – November 2023",
-            description: "Designed and implemented claims reporting tools for regulatory compliance and executive decision-making. Automated data processes to improve accuracy and reduce processing time. Conducted quality assurance testing for new implementations and claims systems.",
+            description: "Sixteen years at Kaiser Permanente, progressing from provider-facing claims support into operations management and finally into claims IT engineering. Final role: VBA, SQL, and Python developer for claims automation and regulatory compliance, serving as Lead Engineer on the Transparency in Pricing Regulations implementation and as SQA Test Engineer for new system implementations.",
             highlights: [
-                "Designed and maintained claims reporting systems",
-                "Automated processes to maximize efficiency and reduce errors",
-                "Conducted in-depth analysis to identify trends and optimize operations"
+                "Claims IT Applications Engineer (2021–2023) — Lead Engineer on Transparency in Pricing Regulations; VBA/SQL/Python claims automation; SQA test engineering for new implementations",
+                "Lead Business Consultant Analyst / Lead Informaticist — executive-level claims and efficiency reporting, payment policy implementation, primary liaison between Claims IT and the Claims business unit; COVID-19 mitigation reporting to the CFO",
+                "Claims Operations Manager — directed claims, adjustments, third-party liability, and coordination of benefits departments; owned project planning through closing",
+                "Operations Supervisor, Closed File Review & Code Review — implemented automated tracking for the Code Review unit; managed inventory and coached staff to cost-containment goals",
+                "Administrative Analyst II — claims data analysis, operational reporting, and regulatory research",
+                "Provider Assistance Unit Specialist — provider inquiries on claims, contracts, and referrals; built training materials and onboarding"
             ],
-            tags: ["Applications Engineer", "Claims", "Reporting", "Automation"]
-        },
-        {
-            title: "Lead Business Consultant Analyst",
-            company: "Kaiser Permanente",
-            location: "Spokane, WA",
-            date: "February 2007 – November 2023",
-            description: "Served as Lead Informaticist for Executive Leadership, providing strategic claims processing and efficiency reporting. Facilitated payment policy implementation, working cross-functionally with stakeholders and IT to ensure successful execution. Acted as the main contact between Claims IT departments and the Claims business unit, and consulted as a Subject Matter Expert.",
-            highlights: [
-                "Provided executive-level claims processing and efficiency reporting",
-                "Facilitated payment policy implementation with stakeholders and IT",
-                "Served as main contact between Claims IT and Claims business units",
-                "Led COVID-19 mitigation efforts and provided financial reporting to the CFO",
-                "Consulted as Subject Matter Expert on claims operations"
-            ],
-            tags: ["Business Analysis", "Healthcare IT", "Leadership", "Strategic Reporting"]
-        },
-        {
-            title: "Administrative Analyst II",
-            company: "Kaiser Permanente",
-            location: "Spokane, WA",
-            date: "February 2007 – November 2023",
-            description: "Performed claims data analysis and reporting to support operational decision-making and process improvement. Managed projects from initiation through completion. Conducted regulatory research and reporting to maintain organizational compliance.",
-            highlights: [
-                "Analyzed claims data and generated operational reports",
-                "Managed projects supporting claims and operational goals",
-                "Conducted regulatory research and ensured compliance reporting"
-            ],
-            tags: ["Data Analysis", "Project Management", "Regulatory Compliance", "Reporting"]
-        },
-        {
-            title: "Operations Supervisor - Closed File Review & Code Review",
-            company: "Kaiser Permanente",
-            location: "Spokane, WA",
-            date: "February 2007 – November 2023",
-            description: "Supervised the Closed File Review and Code Review unit, managing claims inventory and coaching staff towards cost-containment goals. Implemented automated tracking systems for the Code Review unit.",
-            highlights: [
-                "Implemented automated tracking for Code Review Unit",
-                "Managed claims inventory and departmental workflows",
-                "Coached staff towards cost-containment and quality goals"
-            ],
-            tags: ["Supervision", "Quality Assurance", "Claims Auditing", "Process Improvement"]
-        },
-        {
-            title: "Claims Operations Manager",
-            company: "Kaiser Permanente",
-            location: "Spokane, WA",
-            date: "February 2007 – November 2023",
-            description: "Directed claims, adjustments, third-party liability, and coordination of benefits departments. Led project management of operational initiatives, owning planning, execution, and closing of projects delivered on time, within scope, within budget.",
-            highlights: [
-                "Achieved 20% inventory reduction through process improvements",
-                "Led cross-functional teams in operational planning and execution",
-                "Analyzed operational processes and recommended efficiency improvements"
-            ],
-            tags: ["Operations Management", "Project Management", "Claims", "Leadership"]
-        },
-        {
-            title: "Provider Assistance Unit Customer Service Specialist",
-            company: "Kaiser Permanente",
-            location: "Spokane, WA",
-            date: "February 2007 – November 2023",
-            description: "Responded to provider inquiries about claims, contracts, and referral statuses. Processed claims ensuring accuracy and compliance with contractual terms. Acted as liaison between providers and internal departments to resolve issues promptly.",
-            highlights: [
-                "Developed training materials and conducted onboarding sessions",
-                "Provided ongoing documentation updates to improve team efficiency",
-                "Resolved provider issues and ensured customer satisfaction"
-            ],
-            tags: ["Customer Service", "Provider Relations", "Claims", "Training"]
+            tags: ["VBA", "SQL", "Python", "Claims Automation", "Operations Management", "Regulatory Compliance", "Leadership"]
         },
         {
             title: "Trainer / Acting Supervisor",
@@ -240,72 +172,97 @@ const RESUME_DATA = {
     
     projects: [
         {
-            title: "Healthcare Dashboard Suite",
-            description: "Comprehensive Tableau dashboard suite for healthcare analytics including patient outcomes, operational metrics, and financial performance tracking.",
-            tech: ["Tableau", "SQL", "Python", "Healthcare Data"],
+            title: "PDF Forge",
+            description: "Free, open-source Acrobat-style PDF editor for Windows and Linux. Annotation, text editing with font matching, OCR for scanned pages, AcroForm filling, true redaction (content removed from the file, not just covered), watermarks, and encryption.",
+            tech: ["Electron", "React", "pdf.js", "pdf-lib", "Tesseract OCR"],
             highlights: [
-                "Real-time data integration from multiple sources",
-                "Role-based access control for sensitive data",
-                "Mobile-responsive design for executive access"
+                "True redaction — marked content is removed and verified, with fallback to image flattening",
+                "OCR-powered text editing for scanned documents",
+                "Interactive form filling with field flattening"
             ],
-            github: "#",
-            demo: "#"
-        },
-        {
-            title: "Automated Job Application System",
-            description: "Python-based automation system that searches for jobs, tailors resumes using AI, and submits applications to multiple platforms.",
-            tech: ["Python", "Playwright", "OpenAI API", "GitHub Actions"],
-            highlights: [
-                "Automated job search across 5+ platforms",
-                "AI-powered resume tailoring for each position",
-                "Applied to 1000+ positions with 2% response rate"
-            ],
-            github: "https://github.com/tpawley2001/job-automation",
+            github: "https://github.com/tpawley2001/pdf-forge",
             demo: null
         },
         {
-            title: "ETL Pipeline Framework",
-            description: "Reusable Python framework for extracting, transforming, and loading data from various sources into data warehouses.",
-            tech: ["Python", "SQL", "Airflow", "Docker"],
+            title: "Open-Iris",
+            description: "Self-hosted, Linux-first network video recorder built as an open alternative to commercial NVR software. Auto-optimizing camera grid, low-latency HLS sub-streams, and network camera discovery.",
+            tech: ["Python", "FastAPI", "FFmpeg", "HLS", "Docker"],
             highlights: [
-                "Modular design supporting 10+ data sources",
-                "Built-in data validation and error handling",
-                "Reduced ETL development time by 60%"
+                "Live multi-camera grid that adapts as cameras are added or removed",
+                "CIDR-based network scanning for camera discovery",
+                "Runs on a home server or NAS"
             ],
-            github: "#",
+            github: "https://github.com/tpawley2001/Open-Iris",
             demo: null
         },
         {
-            title: "Predictive Analytics Model",
-            description: "Machine learning model to predict patient readmission risk using clinical and demographic data.",
-            tech: ["Python", "scikit-learn", "Pandas", "Jupyter"],
+            title: "AuDDiobooks — TTS Audiobook Reader",
+            description: "Self-hosted audiobook platform that turns EPUBs into narrated audiobooks using a local text-to-speech model, with AI-generated scene illustrations synced to playback position.",
+            tech: ["Next.js", "TypeScript", "Python", "SQLite", "Kokoro TTS", "ComfyUI"],
             highlights: [
-                "85% accuracy in readmission prediction",
-                "Identified key risk factors for clinical teams",
-                "Deployed as REST API for integration"
+                "Local GPU TTS pipeline — no cloud service in the loop",
+                "Scene illustrations generated per chapter and synced to playback",
+                "Google Cast support and a companion Android app with OTA updates"
             ],
-            github: "#",
+            github: "https://github.com/tpawley2001/Open_AuDDiobook",
+            demo: null
+        },
+        {
+            title: "Wyze Bolt Wi-Fi Bridge (ESP32)",
+            description: "Brings a Bluetooth-only Wyze Lock Bolt fully into Home Assistant over Wi-Fi — lock/unlock, live state, and real-time battery — using an ESP32 as a BLE-to-Wi-Fi bridge, including reverse-engineering the lock's encrypted battery characteristic.",
+            tech: ["ESPHome", "Python", "BLE", "Home Assistant", "MQTT"],
+            highlights: [
+                "ESP32 active Bluetooth proxy to reach a weak-radio BLE lock over LAN",
+                "Live battery readings decrypted directly from the BLE characteristic",
+                "Replaced an unreliable cloud polling integration"
+            ],
+            github: "https://github.com/tpawley2001/Wyze-Bolt-WiFi-Bridge-ESP32",
+            demo: null
+        },
+        {
+            title: "Automated Job Application Pipeline",
+            description: "Python and Playwright automation that discovers postings across multiple applicant tracking systems (Taleo, NEOGOV, Workday, symplr), generates a per-job cover letter with a locally hosted LLM, and completes the submission end to end.",
+            tech: ["Python", "Playwright", "Local LLMs", "SQLite", "systemd"],
+            highlights: [
+                "1,451 verified submissions across six ATS adapters",
+                "Per-job cover letters generated from the posting's real job description",
+                "Nightly scheduled runs with resumable drafts and submission verification"
+            ],
+            github: null,
+            demo: null
+        },
+        {
+            title: "ShellTab",
+            description: "Cross-platform tabbed terminal emulator with a built-in FTP client, PTY-backed sessions, and a timed nudge system.",
+            tech: ["Electron", "xterm.js", "node-pty"],
+            highlights: [
+                "Full PTY-backed terminal sessions",
+                "Integrated FTP client alongside terminal tabs",
+                "Windows and Linux support"
+            ],
+            github: "https://github.com/tpawley2001/shelltab",
             demo: null
         }
     ],
     
     education: [
         {
-            degree: "Bachelor of Science in Data Analytics",
-            school: "University Name",
-            location: "Location",
-            date: "2019",
-            highlights: ["GPA: 3.8/4.0", "Dean's List", "Capstone: Healthcare Predictive Analytics"]
+            degree: "High School Diploma",
+            school: "John R. Rogers High School",
+            location: "Spokane, WA",
+            date: "",
+            highlights: []
         }
     ],
     
+    // Only certifications that can be verified. Do not add an entry here
+    // without a credential ID or a working verification URL.
     certifications: [
-        { name: "Google AI Professional Certificate", issuer: "Google", date: "2026", 
+        { name: "Google AI Professional Certificate", issuer: "Google", date: "2026",
           details: "7 courses: AI Fundamentals, AI for Brainstorming & Planning, AI for Research & Insights, AI for Writing & Communication, AI for Content Creation, AI for Data Analysis, AI for App Building. Built 20+ AI artifacts and vibe-coded custom AI solutions.",
           verifyUrl: "https://coursera.org/verify/professional-cert/QBZI8MSZMAX8" },
-        { name: "Tableau Desktop Specialist", issuer: "Tableau", date: "2022" },
-        { name: "AWS Cloud Practitioner", issuer: "Amazon Web Services", date: "2023" },
-        { name: "Epic Clarity Data Model", issuer: "Epic Systems", date: "2023" }
+        { name: "FullbridgeX Certificate in Business and Data Analysis", issuer: "edX / Fullbridge", date: "",
+          details: "Business and data analysis professional certificate" }
     ]
 };
 
@@ -313,359 +270,242 @@ const RESUME_DATA = {
 const AI_KNOWLEDGE = {
     // Job compatibility analysis
     analyzeJobFit: function(jobDescription) {
+        // Each entry must correspond to work Tyson has actually done.
+        // "years" is time doing that thing, not time employed somewhere that had it.
+        // If a skill is not here, the honest answer is that he does not have it.
         const keywords = {
-            // Data/Technical Skills
-            "sql": { match: true, strength: "expert", years: 5 },
-            "python": { match: true, strength: "advanced", years: 4 },
-            "tableau": { match: true, strength: "expert", years: 4 },
-            "power bi": { match: true, strength: "advanced", years: 3 },
-            "healthcare": { match: true, strength: "expert", years: 16 },
-            "data analyst": { match: true, strength: "expert", years: 5 },
-            "clinical": { match: true, strength: "advanced", years: 16 },
-            "epic": { match: true, strength: "advanced", years: 2 },
-            "etl": { match: true, strength: "advanced", years: 4 },
-            "statistics": { match: true, strength: "intermediate", years: 3 },
-            "machine learning": { match: true, strength: "intermediate", years: 2 },
-            "aws": { match: true, strength: "intermediate", years: 2 },
-            "docker": { match: true, strength: "beginner", years: 1 },
-            "r": { match: true, strength: "intermediate", years: 2 },
-            "excel": { match: true, strength: "expert", years: 7 },
-            // Operations/Project Management Skills
-            "project manager": { match: true, strength: "expert", years: 16 },
-            "operations manager": { match: true, strength: "expert", years: 16 },
-            "operations": { match: true, strength: "expert", years: 16 },
-            "cross-functional": { match: true, strength: "expert", years: 16 },
-            "process improvement": { match: true, strength: "expert", years: 16 },
-            "budget management": { match: true, strength: "advanced", years: 10 },
-            "risk mitigation": { match: true, strength: "advanced", years: 16 },
-            "stakeholder": { match: true, strength: "expert", years: 16 },
-            "claims": { match: true, strength: "expert", years: 16 },
-            "leadership": { match: true, strength: "expert", years: 16 },
-            "team lead": { match: true, strength: "expert", years: 16 },
-            "continuous improvement": { match: true, strength: "expert", years: 16 },
-            "strategic planning": { match: true, strength: "expert", years: 10 },
-            "vendor management": { match: true, strength: "advanced", years: 8 },
-            "quality assurance": { match: true, strength: "expert", years: 16 },
-            "project planning": { match: true, strength: "expert", years: 16 },
-            "project execution": { match: true, strength: "expert", years: 16 },
-            "edi": { match: true, strength: "expert", years: 16 },
-            // Claims Processing Keywords
-            "claims processing": { match: true, strength: "expert", years: 16 },
-            "claims auditor": { match: true, strength: "expert", years: 16 },
-            "claims examiner": { match: true, strength: "expert", years: 16 },
-            "claims specialist": { match: true, strength: "expert", years: 16 },
-            "claims analyst": { match: true, strength: "expert", years: 16 },
-            "claims adjudication": { match: true, strength: "expert", years: 16 },
-            "claims adjustment": { match: true, strength: "expert", years: 16 },
-            "medical claims": { match: true, strength: "expert", years: 16 },
-            "dental claims": { match: true, strength: "expert", years: 7 },
-            "coordination of benefits": { match: true, strength: "expert", years: 16 },
-            "cob": { match: true, strength: "expert", years: 16 },
-            "third party liability": { match: true, strength: "expert", years: 16 },
-            "tpl": { match: true, strength: "expert", years: 16 },
-            "subrogation": { match: true, strength: "advanced", years: 10 },
-            "recovery": { match: true, strength: "advanced", years: 10 },
-            "overpayment": { match: true, strength: "expert", years: 16 },
-            "audit": { match: true, strength: "expert", years: 16 },
-            "quality assurance": { match: true, strength: "expert", years: 16 },
-            // Customer Service/Support Keywords
-            "customer service": { match: true, strength: "expert", years: 16 },
-            "customer support": { match: true, strength: "expert", years: 16 },
-            "customer care": { match: true, strength: "expert", years: 16 },
-            "customer care representative": { match: true, strength: "expert", years: 16 },
-            "technical support": { match: true, strength: "advanced", years: 10 },
-            "help desk": { match: true, strength: "advanced", years: 10 },
-            "provider relations": { match: true, strength: "expert", years: 16 },
-            "provider services": { match: true, strength: "expert", years: 16 },
-            "member services": { match: true, strength: "expert", years: 16 },
-            "call center": { match: true, strength: "expert", years: 16 },
-            "phone support": { match: true, strength: "expert", years: 16 },
-            "chat support": { match: true, strength: "expert", years: 16 },
-            "issue resolution": { match: true, strength: "expert", years: 16 },
-            "escalation": { match: true, strength: "expert", years: 16 },
-            "troubleshooting": { match: true, strength: "advanced", years: 10 },
-            "training": { match: true, strength: "expert", years: 16 },
-            "mentoring": { match: true, strength: "expert", years: 16 },
-            "staff development": { match: true, strength: "expert", years: 16 },
-            "onboarding": { match: true, strength: "expert", years: 16 },
-            "documentation": { match: true, strength: "expert", years: 16 },
-            "benefits": { match: true, strength: "expert", years: 16 },
-            "eligibility": { match: true, strength: "expert", years: 16 },
-            "phi": { match: true, strength: "expert", years: 16 },
-            "protected health information": { match: true, strength: "expert", years: 16 },
-            "confidentiality": { match: true, strength: "expert", years: 16 },
-            "hipaa": { match: true, strength: "expert", years: 16 },
-            "crm": { match: true, strength: "expert", years: 16 },
-            "kpi": { match: true, strength: "expert", years: 16 },
-            "performance indicators": { match: true, strength: "expert", years: 16 },
-            "bilingual": { match: true, strength: "beginner", years: 2 },
-            "spanish": { match: true, strength: "beginner", years: 2 },
-            // IT/Systems Keywords
-            "it support": { match: true, strength: "advanced", years: 10 },
-            "systems analyst": { match: true, strength: "advanced", years: 10 },
-            "applications engineer": { match: true, strength: "expert", years: 16 },
-            "systems engineer": { match: true, strength: "advanced", years: 10 },
-            "business analyst": { match: true, strength: "expert", years: 10 },
-            "reporting tools": { match: true, strength: "expert", years: 16 },
-            "dashboard": { match: true, strength: "expert", years: 10 },
-            "automation": { match: true, strength: "expert", years: 16 },
-            "workflow": { match: true, strength: "expert", years: 16 },
-            // Management Keywords
-            "supervisor": { match: true, strength: "expert", years: 16 },
-            "manager": { match: true, strength: "expert", years: 16 },
-            "director": { match: true, strength: "advanced", years: 5 },
-            "administrator": { match: true, strength: "expert", years: 10 },
-            "administrative": { match: true, strength: "expert", years: 10 },
-            "team lead": { match: true, strength: "expert", years: 16 },
-            "team management": { match: true, strength: "expert", years: 16 },
-            "performance management": { match: true, strength: "expert", years: 16 },
-            "coaching": { match: true, strength: "expert", years: 16 },
-            "workforce": { match: true, strength: "expert", years: 16 },
-            // Data/BI/Analytics Keywords
-            "bi developer": { match: true, strength: "advanced", years: 5 },
-            "business intelligence": { match: true, strength: "advanced", years: 5 },
-            "business analyst": { match: true, strength: "expert", years: 10 },
-            "data analyst": { match: true, strength: "expert", years: 10 },
-            "junior data analyst": { match: true, strength: "expert", years: 10 },
-            "data scientist": { match: true, strength: "intermediate", years: 3 },
-            "data warehouse": { match: true, strength: "advanced", years: 5 },
-            "etl developer": { match: true, strength: "advanced", years: 5 },
-            "sql developer": { match: true, strength: "expert", years: 10 },
-            "python developer": { match: true, strength: "advanced", years: 4 },
-            "full stack developer": { match: true, strength: "intermediate", years: 2 },
-            "software engineer": { match: true, strength: "intermediate", years: 3 },
-            "junior software engineer": { match: true, strength: "intermediate", years: 3 },
-            "application developer": { match: true, strength: "advanced", years: 8 },
-            "report developer": { match: true, strength: "expert", years: 10 },
-            "analytics engineer": { match: true, strength: "advanced", years: 5 },
-            "data engineer": { match: true, strength: "advanced", years: 4 },
-            // Clinical/Healthcare IT Keywords
-            "clinical informatics": { match: true, strength: "advanced", years: 8 },
-            "clinical informatics specialist": { match: true, strength: "advanced", years: 8 },
-            "rn clinical informatics": { match: true, strength: "advanced", years: 8 },
-            "health information management": { match: true, strength: "expert", years: 16 },
-            "him": { match: true, strength: "expert", years: 16 },
-            "cdi": { match: true, strength: "advanced", years: 8 },
-            "clinical documentation": { match: true, strength: "advanced", years: 8 },
-            "mds coordinator": { match: true, strength: "intermediate", years: 5 },
-            "trauma registrar": { match: true, strength: "intermediate", years: 5 },
-            "quality systems analyst": { match: true, strength: "expert", years: 10 },
-            "healthcare business analyst": { match: true, strength: "expert", years: 10 },
-            "healthcare analyst": { match: true, strength: "expert", years: 10 },
-            "healthcare configuration": { match: true, strength: "advanced", years: 8 },
-            "facets": { match: true, strength: "intermediate", years: 5 },
-            "systems analyst": { match: true, strength: "advanced", years: 10 },
-            "rn systems analyst": { match: true, strength: "advanced", years: 10 },
-            "is data": { match: true, strength: "advanced", years: 10 },
-            "integration analyst": { match: true, strength: "advanced", years: 10 },
-            // Revenue Cycle Keywords
-            "revenue cycle": { match: true, strength: "expert", years: 16 },
-            "revenue cycle analyst": { match: true, strength: "expert", years: 16 },
-            "credit team": { match: true, strength: "expert", years: 16 },
-            "stop loss": { match: true, strength: "advanced", years: 10 },
-            "sales operations analyst": { match: true, strength: "advanced", years: 8 },
-            "insurance": { match: true, strength: "expert", years: 16 },
-            "health insurance": { match: true, strength: "expert", years: 16 },
-            "life insurance": { match: true, strength: "intermediate", years: 5 },
-            "reinsurance": { match: true, strength: "intermediate", years: 5 },
-            "broker": { match: true, strength: "intermediate", years: 5 },
-            "payroll": { match: true, strength: "intermediate", years: 5 },
-            "benefits specialist": { match: true, strength: "expert", years: 16 },
-            // Administrative/Operations Keywords
-            "administrative": { match: true, strength: "expert", years: 10 },
-            "administrative operations": { match: true, strength: "expert", years: 10 },
-            "operations analyst": { match: true, strength: "expert", years: 16 },
-            "business optimization": { match: true, strength: "expert", years: 16 },
-            "strategic operations": { match: true, strength: "expert", years: 10 },
-            "project support": { match: true, strength: "expert", years: 16 },
-            "workforce": { match: true, strength: "expert", years: 16 },
-            "workforce management": { match: true, strength: "expert", years: 16 },
-            // Technical/IT Keywords
-            "powerbi": { match: true, strength: "advanced", years: 3 },
-            "power bi": { match: true, strength: "advanced", years: 3 },
-            "tableau": { match: true, strength: "expert", years: 4 },
-            "onestream": { match: true, strength: "beginner", years: 1 },
-            "maximo": { match: true, strength: "intermediate", years: 3 },
-            "aws": { match: true, strength: "intermediate", years: 2 },
-            "aws data": { match: true, strength: "intermediate", years: 2 },
-            "cloud": { match: true, strength: "intermediate", years: 2 },
-            "data center": { match: true, strength: "beginner", years: 1 },
-            "data architect": { match: true, strength: "intermediate", years: 3 },
-            "security": { match: true, strength: "intermediate", years: 5 },
-            "clearance": { match: true, strength: "intermediate", years: 5 },
-            "security clearance": { match: true, strength: "intermediate", years: 5 },
-            "ruby on rails": { match: true, strength: "beginner", years: 1 },
-            "java": { match: true, strength: "intermediate", years: 3 },
-            "api": { match: true, strength: "advanced", years: 5 },
-            "rest api": { match: true, strength: "advanced", years: 5 },
-            "salesforce": { match: true, strength: "beginner", years: 1 },
-            "crm": { match: true, strength: "expert", years: 16 },
-            "data governance": { match: true, strength: "advanced", years: 5 },
-            "data quality": { match: true, strength: "expert", years: 10 },
-            "data integration": { match: true, strength: "advanced", years: 8 },
-            "small commercial": { match: true, strength: "intermediate", years: 5 },
-            "product analytics": { match: true, strength: "intermediate", years: 3 },
-            "sales enablement": { match: true, strength: "intermediate", years: 5 },
-            "investment banking": { match: true, strength: "beginner", years: 1 },
-            "accounting": { match: true, strength: "intermediate", years: 5 },
-            "accountant": { match: true, strength: "intermediate", years: 5 },
-            "attorney": { match: true, strength: "beginner", years: 1 },
-            "legal": { match: true, strength: "beginner", years: 1 },
-            "electrical engineer": { match: true, strength: "beginner", years: 1 },
-            "mechanical designer": { match: true, strength: "beginner", years: 1 },
-            "commissioning engineer": { match: true, strength: "beginner", years: 1 },
-            "game designer": { match: true, strength: "beginner", years: 1 },
-            "design intern": { match: true, strength: "beginner", years: 1 },
-            "architect": { match: true, strength: "beginner", years: 1 },
-            "ai specialist": { match: true, strength: "intermediate", years: 2 },
-            "haitian creole": { match: true, strength: "beginner", years: 1 },
-            "forward deployed": { match: true, strength: "beginner", years: 1 },
-            "restaurant": { match: true, strength: "beginner", years: 1 },
-            "account manager": { match: true, strength: "intermediate", years: 5 },
-            "corporate marketing": { match: true, strength: "intermediate", years: 3 },
-            "brand communications": { match: true, strength: "intermediate", years: 3 },
-            "vp": { match: true, strength: "advanced", years: 5 },
-            "vice president": { match: true, strength: "advanced", years: 5 },
-            "senior director": { match: true, strength: "advanced", years: 5 },
-            "biological analytical": { match: true, strength: "beginner", years: 1 },
-            "analytical development": { match: true, strength: "beginner", years: 1 },
-            "home based": { match: true, strength: "expert", years: 16 },
-            "remote": { match: true, strength: "expert", years: 16 },
-            "hybrid": { match: true, strength: "expert", years: 10 },
-            // Agentic Systems Keywords
-            "multi-agent": { match: true, strength: "advanced", years: 2 },
-            "agent": { match: true, strength: "advanced", years: 2 },
-            "agentic": { match: true, strength: "advanced", years: 2 },
-            "decomposition": { match: true, strength: "advanced", years: 2 },
-            "delegation": { match: true, strength: "advanced", years: 2 },
-            "context window": { match: true, strength: "advanced", years: 2 },
-            "context architecture": { match: true, strength: "advanced", years: 2 },
-            "prompt engineering": { match: true, strength: "advanced", years: 2 },
-            "llm": { match: true, strength: "advanced", years: 2 },
-            "large language model": { match: true, strength: "advanced", years: 2 },
-            "failure pattern": { match: true, strength: "intermediate", years: 2 },
-            "trust design": { match: true, strength: "intermediate", years: 2 },
-            "security design": { match: true, strength: "intermediate", years: 2 },
-            "specification": { match: true, strength: "advanced", years: 5 },
-            "requirements": { match: true, strength: "expert", years: 10 },
-            "quality judgment": { match: true, strength: "advanced", years: 5 },
-            "evaluation": { match: true, strength: "advanced", years: 5 }
+            // Claims & healthcare operations — 16 yrs Kaiser + 7 yrs Delta Dental
+            "claims": { strength: "expert", years: 23 },
+            "claims processing": { strength: "expert", years: 23 },
+            "claims adjudication": { strength: "expert", years: 23 },
+            "claims examiner": { strength: "expert", years: 23 },
+            "claims analyst": { strength: "expert", years: 23 },
+            "claims specialist": { strength: "expert", years: 23 },
+            "claims auditor": { strength: "expert", years: 16 },
+            "claims adjustment": { strength: "expert", years: 16 },
+            "medical claims": { strength: "expert", years: 16 },
+            "dental claims": { strength: "expert", years: 7 },
+            "coordination of benefits": { strength: "expert", years: 16 },
+            "third party liability": { strength: "expert", years: 16 },
+            "subrogation": { strength: "proficient", years: 10 },
+            "overpayment": { strength: "expert", years: 16 },
+            "edi": { strength: "expert", years: 16 },
+            "adjudication": { strength: "expert", years: 23 },
+            "healthcare": { strength: "expert", years: 23 },
+            "health insurance": { strength: "expert", years: 23 },
+            "insurance": { strength: "expert", years: 23 },
+            "revenue cycle": { strength: "proficient", years: 16 },
+            "benefits": { strength: "expert", years: 16 },
+            "eligibility": { strength: "expert", years: 16 },
+            "hipaa": { strength: "expert", years: 23 },
+            "protected health information": { strength: "expert", years: 23 },
+            "regulatory compliance": { strength: "expert", years: 16 },
+            "payment policy": { strength: "proficient", years: 8 },
+            "transparency in pricing": { strength: "expert", years: 2 },
+
+            // Operations & management
+            "operations manager": { strength: "expert", years: 12 },
+            "operations": { strength: "expert", years: 16 },
+            "project manager": { strength: "expert", years: 12 },
+            "project management": { strength: "expert", years: 12 },
+            "process improvement": { strength: "expert", years: 16 },
+            "cross-functional": { strength: "expert", years: 16 },
+            "stakeholder": { strength: "expert", years: 12 },
+            "team lead": { strength: "expert", years: 12 },
+            "supervisor": { strength: "expert", years: 12 },
+            "coaching": { strength: "expert", years: 12 },
+            "mentoring": { strength: "expert", years: 12 },
+            "training": { strength: "expert", years: 20 },
+            "onboarding": { strength: "expert", years: 16 },
+            "workforce management": { strength: "proficient", years: 10 },
+            "vendor management": { strength: "proficient", years: 8 },
+            "quality assurance": { strength: "expert", years: 16 },
+            "bookkeeping": { strength: "proficient", years: 1 },
+
+            // Customer / provider facing
+            "customer service": { strength: "expert", years: 23 },
+            "customer support": { strength: "expert", years: 23 },
+            "customer care": { strength: "expert", years: 23 },
+            "provider relations": { strength: "expert", years: 16 },
+            "call center": { strength: "expert", years: 16 },
+            "issue resolution": { strength: "expert", years: 23 },
+            "escalation": { strength: "expert", years: 16 },
+            "documentation": { strength: "proficient", years: 16 },
+
+            // Data & technical — real, hands-on
+            "sql": { strength: "expert", years: 12 },
+            "vba": { strength: "expert", years: 10 },
+            "python": { strength: "proficient", years: 4 },
+            "excel": { strength: "expert", years: 20 },
+            "tableau": { strength: "proficient", years: 4 },
+            "power bi": { strength: "working", years: 2 },
+            "data analyst": { strength: "proficient", years: 10 },
+            "data analysis": { strength: "proficient", years: 12 },
+            "business analyst": { strength: "expert", years: 10 },
+            "reporting": { strength: "expert", years: 16 },
+            "dashboard": { strength: "proficient", years: 8 },
+            "etl": { strength: "proficient", years: 6 },
+            "automation": { strength: "expert", years: 10 },
+            "applications engineer": { strength: "proficient", years: 2 },
+            "systems analyst": { strength: "proficient", years: 8 },
+            "linux": { strength: "proficient", years: 4 },
+            "docker": { strength: "working", years: 2 },
+            "git": { strength: "proficient", years: 4 },
+            "javascript": { strength: "working", years: 3 },
+            "typescript": { strength: "working", years: 2 },
+            "api": { strength: "proficient", years: 4 },
+            "rest api": { strength: "proficient", years: 4 },
+            "self-hosted": { strength: "proficient", years: 4 },
+
+            // AI / agentic — the last two years of daily practice
+            "prompt engineering": { strength: "proficient", years: 2 },
+            "llm": { strength: "proficient", years: 2 },
+            "large language model": { strength: "proficient", years: 2 },
+            "agentic": { strength: "proficient", years: 2 },
+            "multi-agent": { strength: "proficient", years: 2 },
+            "ai model testing": { strength: "proficient", years: 2 },
+            "model evaluation": { strength: "proficient", years: 2 },
+            "playwright": { strength: "proficient", years: 2 },
+            "browser automation": { strength: "proficient", years: 2 },
+            "rag": { strength: "working", years: 1 },
+            "fine-tuning": { strength: "working", years: 1 }
         };
-        
-        const jobLower = jobDescription.toLowerCase();
-        let matched = [];
-        let missing = [];
-        let score = 0;
-        
+
+        // Requirements Tyson does NOT meet. These are reported honestly rather
+        // than silently ignored. Never delete an entry here to improve a score.
+        const knownGaps = {
+            "bachelor": "No bachelor's degree — Google AI Professional Certificate; 23 years of directly relevant experience",
+            "bachelor's": "No bachelor's degree — Google AI Professional Certificate; 23 years of directly relevant experience",
+            "master": "No master's degree",
+            "mba": "No MBA",
+            "phd": "No doctorate",
+            "rn ": "Not a licensed Registered Nurse",
+            "registered nurse": "Not a licensed Registered Nurse",
+            "lpn": "Not a licensed practical nurse",
+            "nursing": "No nursing license or clinical care background",
+            "clinician": "Not a clinician — his healthcare experience is claims and operations, not care delivery",
+            "physician": "Not a physician",
+            "pharmacist": "Not a pharmacist",
+            "attorney": "Not an attorney; no JD or bar admission",
+            "juris doctor": "Not an attorney; no JD or bar admission",
+            "bar admission": "Not an attorney; no JD or bar admission",
+            "cpa": "Not a CPA",
+            "pe license": "Not a licensed professional engineer",
+            "security clearance": "No active security clearance",
+            "bilingual": "English only",
+            "spanish": "Does not speak Spanish",
+            "fluent in": "English only",
+            "machine learning engineer": "Uses and evaluates ML models; has not worked as an ML engineer",
+            "data scientist": "Not a data scientist — no statistical modeling or ML development background",
+            "epic certified": "Worked alongside Epic systems but holds no Epic certification",
+            "certified coder": "Not a certified medical coder (no CPC/CCS)",
+            "cpc": "Not a certified medical coder",
+            "actuar": "No actuarial credentials"
+        };
+
+        const jobLower = ' ' + jobDescription.toLowerCase() + ' ';
+
+        // Word-boundary match so "sql" doesn't fire on "mysqli" and short terms
+        // like "r" or "api" don't match arbitrary substrings.
+        const mentions = (term) => {
+            const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`, 'i').test(jobLower);
+        };
+
+        const matched = [];
+        const missing = [];
+
         for (const [skill, data] of Object.entries(keywords)) {
-            if (jobLower.includes(skill)) {
-                matched.push({ skill, ...data });
-                score += data.years * 10;
-            }
+            if (mentions(skill)) matched.push({ skill, match: true, ...data });
         }
-        
-        // Calculate fit percentage with weighted scoring
-        // High-value skills get 2x weight
-        const highValueSkills = [
-            // Operations/PM
-            'project manager', 'operations manager', 'operations', 'cross-functional', 
-            'process improvement', 'project planning', 'project execution', 'leadership',
-            'team lead', 'stakeholder', 'risk mitigation', 'continuous improvement',
-            'strategic operations', 'project support', 'business optimization',
-            // Customer Service
-            'healthcare', 'claims', 'customer service', 'customer care',
-            'customer care representative', 'provider relations', 'call center', 
-            'issue resolution', 'escalation', 'benefits', 'eligibility',
-            // Data/Analytics
-            'data analyst', 'business analyst', 'bi developer', 'sql developer',
-            'report developer', 'analytics engineer', 'clinical informatics',
-            // Healthcare IT
-            'clinical informatics specialist', 'healthcare business analyst', 
-            'healthcare analyst', 'revenue cycle', 'revenue cycle analyst',
-            'systems analyst', 'integration analyst', 'applications engineer',
-            // Revenue Cycle
-            'claims analyst', 'claims specialist', 'stop loss', 'credit team',
-            // Administrative
-            'administrative', 'administrative operations', 'workforce management'
-        ];
-        
-        let weightedScore = 0;
-        let maxPossibleScore = 0;
-        
-        matched.forEach(m => {
-            const weight = highValueSkills.includes(m.skill) ? 2 : 1;
-            weightedScore += (m.years * 10 * weight);
-        });
-        
-        // Calculate percentage based on weighted matches
-        const fitPercentage = Math.min(98, Math.round(40 + (matched.length * 3) + (weightedScore / 50)));
-        
-        return {
-            fitPercentage,
-            matched,
-            recommendation: fitPercentage >= 90 ? "Excellent fit - Strongly recommend" : 
-                          fitPercentage >= 75 ? "Very good fit" : 
-                          fitPercentage >= 60 ? "Good fit" : 
-                          fitPercentage >= 40 ? "Moderate fit" : "May not be ideal"
-        };
+        for (const [gap, note] of Object.entries(knownGaps)) {
+            if (mentions(gap.trim())) missing.push({ requirement: gap.trim(), note });
+        }
+
+        // Honest scoring: proportion of the role's recognisable requirements that
+        // Tyson actually covers, weighted by depth. No floor, no fixed baseline.
+        const depth = { expert: 1.0, proficient: 0.7, working: 0.4 };
+        const signals = matched.length + missing.length;
+        let fitPercentage = 0;
+
+        if (signals > 0) {
+            const covered = matched.reduce((sum, m) => sum + depth[m.strength], 0);
+            fitPercentage = Math.round((covered / signals) * 100);
+            // Each unmet hard requirement is a real deduction.
+            fitPercentage = Math.max(0, fitPercentage - missing.length * 12);
+            fitPercentage = Math.min(95, fitPercentage);
+        }
+
+        const recommendation =
+            signals === 0                        ? "Not enough detail to assess — paste the full job description" :
+            missing.length > 0 && matched.length === 0 ? "Not a fit — unmet hard requirements" :
+            fitPercentage >= 80                  ? "Strong fit" :
+            fitPercentage >= 60                  ? "Good fit" :
+            fitPercentage >= 40                  ? "Partial fit — some real gaps" :
+                                                   "Likely not a fit";
+
+        return { fitPercentage, matched, missing, recommendation };
     },
     
     // Response templates
     responses: {
         greeting: "Hello! I'm Tyson's AI assistant. I can help you understand his skills, experience, and assess job fit. What would you like to know?",
         
-        skills: `Tyson's top skills include:
+        skills: `Tyson's strongest areas, honestly ranked:
 
-**Operations & Project Management:**
-• Project Planning, Execution & Closing (16+ years)
-• Cross-Functional Team Leadership (16+ years)
-• Process Improvement & Efficiency (16+ years)
-• Budget & Scope Management (10+ years)
-• Risk Identification & Mitigation (16+ years)
+**Expert** — years of daily professional use:
+• Claims processing, auditing, adjustments, COB/third-party liability (23 years)
+• Healthcare operations and team leadership (16 years)
+• SQL and Excel/VBA (10–20 years)
+• Regulatory compliance and reporting (16 years)
+• Customer and provider support (23 years)
 
-**Data & Technical:**
-• SQL (5+ years), Tableau (4+ years), Power BI (3+ years)
-• Python (4+ years), Excel Advanced (7+ years)
-• Data Analysis, ETL Processes, Statistical Analysis
+**Proficient** — used regularly to ship real work:
+• Python, Tableau, Linux, Git, ETL pipelines
+• Prompt engineering, LLM evaluation, browser automation (Playwright)
+• Project management and process improvement
 
-**Healthcare:**
-• Epic Systems, HL7/FHIR, Clinical Data Analysis
-• Revenue Cycle, Claims Operations, EDI
-• HIPAA Compliance, Quality Assurance
+**Working knowledge** — productive, still learning:
+• Power BI, Docker, JavaScript/TypeScript
 
-He's particularly strong in healthcare operations and data-driven project management.`,
+Worth naming the boundary: he's payer-side claims and operations, not clinical.
+No nursing or coding credentials, and no degree — the technical depth comes from
+23 years on the job plus the systems he builds and runs himself.`,
 
-        healthcare: `Yes! Tyson has 16+ years of healthcare industry experience:
+        healthcare: `Yes — 23 years of it, all on the payer and claims side:
 
-**Operations Management:**
-• Operations Manager at Kaiser Permanente (16+ years)
-• Directed claims, adjustments, third-party liability, COB departments
-• Led cross-functional teams and operational initiatives
-• Achieved 20% inventory reduction through process improvements
+**Operations & Claims:**
+• Kaiser Permanente, 2007–2023: provider support → operations management → claims IT engineering
+• Directed claims, adjustments, third-party liability, and COB departments
+• Delta Dental of California, 2000–2007: dental claims processing and training
+• Currently EDI claims routing and adjudication at First Choice Health
 
-**Clinical & Data:**
-• Epic Systems: Proficient in Epic Clarity data model and reporting
-• Clinical Data: Experience with patient outcomes, operational metrics
-• EDI/Claims: Healthcare claims processing and EDI routing
-• Compliance: HIPAA knowledge and healthcare data security
+**Systems & Compliance:**
+• EDI claims (837/835) routing, adjudication, and correspondence triage
+• Lead Engineer on Kaiser's Transparency in Pricing regulatory implementation
+• VBA/SQL/Python claims automation and regulatory reporting
+• HIPAA compliance and healthcare data handling
 
-He's worked extensively in healthcare operations, claims, and project management.`,
+To be clear about the shape of it: this is payer-side claims and operations
+experience, not clinical care. He isn't a clinician and doesn't hold clinical
+licenses or coding certifications.`,
 
-        projects: `Here are Tyson's key projects:
+        projects: `Here's what Tyson has actually built — all of these are public, and the code is on GitHub:
 
-1. **Healthcare Dashboard Suite** - Tableau dashboards for patient outcomes and operational metrics
-2. **Automated Job Application System** - Python automation using AI for resume tailoring
-3. **ETL Pipeline Framework** - Reusable Python framework for data integration
-4. **Predictive Analytics Model** - ML model for patient readmission prediction (85% accuracy)
+1. **PDF Forge** - Acrobat-style PDF editor (Electron/React) with true redaction and OCR text editing — github.com/tpawley2001/pdf-forge
+2. **Open-Iris** - Self-hosted Linux network video recorder with live multi-camera HLS — github.com/tpawley2001/Open-Iris
+3. **AuDDiobooks** - EPUB-to-audiobook platform using a local GPU TTS model, with AI-generated scene art — github.com/tpawley2001/Open_AuDDiobook
+4. **Wyze Bolt Wi-Fi Bridge** - ESP32 BLE-to-Wi-Fi bridge that brought a Bluetooth-only smart lock into Home Assistant, including decrypting its battery characteristic — github.com/tpawley2001/Wyze-Bolt-WiFi-Bridge-ESP32
+5. **ShellTab** - Cross-platform tabbed terminal with built-in FTP — github.com/tpawley2001/shelltab
+6. **Job Application Pipeline** - Python/Playwright automation across six applicant tracking systems, 1,451 verified submissions, per-job cover letters from a locally hosted LLM (private repo)
 
 **Operations Achievements:**
-• 20% claims inventory reduction through process improvements at Kaiser Permanente
 • Led EDI claims routing optimization at First Choice Health
-• Managed tournament operations for WA State US Bowling Congress
+• Managed tournament operations and finances for WA State US Bowling Congress
 
-Each demonstrates his technical skills, operational expertise, and problem-solving abilities.`,
+These are working systems he uses daily, not demos.`,
 
-        experience: `Tyson has 16+ years of healthcare operations and project management experience:
+        experience: `Tyson has 23 years of healthcare claims and operations experience:
 
 **Current**: Customer Care Specialist / EDI Analyst at First Choice Health (2025-Present)
 - Lead analysis of operational processes for EDI claims routing
@@ -679,10 +519,15 @@ Each demonstrates his technical skills, operational expertise, and problem-solvi
 - Led cross-functional teams in claims inventory management
 - Optimized workflow processes for claims processing
 
-**Operations Manager, Claims** at Kaiser Permanente (2007-2023)
-- Directed claims, adjustments, third-party liability, COB departments
-- Achieved 20% inventory reduction through process improvements
-- Led project management of operational initiatives from planning to execution`,
+**Kaiser Permanente** (February 2007 – November 2023) — sixteen years, several roles:
+- Claims IT Applications Engineer (2021–2023): Lead Engineer on Transparency in Pricing regulations; VBA/SQL/Python claims automation; SQA testing
+- Lead Business Consultant Analyst / Lead Informaticist: executive claims and efficiency reporting, payment policy implementation, CFO reporting during COVID-19
+- Claims Operations Manager: directed claims, adjustments, third-party liability, and COB departments
+- Operations Supervisor, Closed File Review & Code Review: built automated tracking for the Code Review unit
+- Administrative Analyst II, then Provider Assistance Unit Specialist earlier in the tenure
+
+**Delta Dental Plan of California** (March 2000 – February 2007)
+- Trainer and Acting Supervisor for claims processing teams`,
 
         contact: `You can reach Tyson at:
 

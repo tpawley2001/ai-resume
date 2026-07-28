@@ -381,27 +381,39 @@ body {
 }
 
 .proficiency-item {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+    padding-left: 14px;
 }
 
 .proficiency-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
 }
 
-.proficiency-bar {
-    height: 10px;
-    background: var(--bg-color);
-    border-radius: 5px;
-    overflow: hidden;
+.proficiency-tier-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 22px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.proficiency-fill {
-    height: 100%;
-    background: var(--gradient-1);
-    border-radius: 5px;
-    transition: width 1s ease;
+.proficiency-tier-heading:first-child {
+    margin-top: 0;
+}
+
+.proficiency-tier-heading span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.skill-tier {
+    font-style: normal;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.65;
 }
 
 /* Timeline */
