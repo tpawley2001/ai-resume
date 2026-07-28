@@ -1,24 +1,31 @@
 /**
- * Visitor Tracker with Formspree Notifications
- * Sends email notification when someone visits the resume
+ * Visitor Tracker with Telegram Notifications
+ * Sends a Telegram message when someone opens the resume.
+ *
+ * NOTE: this is a static site (GitHub Pages), so the bot token below is
+ * visible to anyone who views source. Use a bot dedicated to this page --
+ * never one that also handles private chats. To swap bots:
+ *   1. Talk to @BotFather -> /newbot
+ *   2. Message the new bot once, then open
+ *      https://api.telegram.org/bot<TOKEN>/getUpdates to read your chat id
+ *   3. Replace BOT_TOKEN and CHAT_ID below
  */
 
 (function() {
-    // Formspree Configuration
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzdjkapj';
-    
+    // Telegram Configuration
+    // @tsn_resume_bot -- dedicated to this page only
+    const BOT_TOKEN = 'REDACTED_TELEGRAM_BOT_TOKEN';
+    const CHAT_ID = '6086511173';
+    const TELEGRAM_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
     // Prevent duplicate notifications on page refresh
     if (sessionStorage.getItem('visitorNotified')) {
         return;
     }
-    
-    // Get visitor email from splash page
-    const visitorEmail = localStorage.getItem('visitorEmail') || 'Unknown';
-    
+
     // Get visitor info
     const visitorInfo = {
         timestamp: new Date().toISOString(),
-        email: visitorEmail,
         userAgent: navigator.userAgent,
         language: navigator.language,
         platform: navigator.platform,
@@ -26,12 +33,10 @@
         referrer: document.referrer || 'Direct',
         page: window.location.href
     };
-    
-    // Format message
-    const message = `
-🎯 Resume Visitor Alert!
 
-👤 Visitor: ${visitorEmail}
+    // Format message
+    const message = `🎯 *Resume Visitor Alert!*
+
 📅 Time: ${new Date().toLocaleString()}
 🌐 Source: ${visitorInfo.referrer}
 💻 Platform: ${visitorInfo.platform}
@@ -40,46 +45,43 @@
 
 🔗 Page: ${visitorInfo.page}
 
-Someone is checking out your resume!
-    `;
-    
+Someone is checking out your resume!`;
+
     // Log to console (always works)
     console.log('📊 Visitor tracked:', visitorInfo);
-    
-    // Send to Formspree for email notification
-    fetch(FORMSPREE_ENDPOINT, {
+
+    // Send to Telegram
+    fetch(TELEGRAM_API, {
         method: 'POST',
-        headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            message: message,
-            visitor: visitorInfo,
-            _subject: '🎯 Resume Visitor Alert!',
-            email: 'visitor@resume.ai'
+            chat_id: CHAT_ID,
+            text: message,
+            parse_mode: 'Markdown',
+            disable_web_page_preview: true
         })
     })
-    .then(response => {
-        if (response.ok) {
-            console.log('✅ Email notification sent via Formspree');
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            console.log('✅ Telegram notification sent');
         } else {
-            console.log('⚠️ Formspree notification failed, logged to console');
+            console.log('⚠️ Telegram notification failed:', data.description);
         }
     })
     .catch(err => {
-        console.log('Visitor tracked (Formspree error):', visitorInfo);
+        console.log('Visitor tracked (Telegram error):', err);
     });
-    
+
     // Mark as notified
     sessionStorage.setItem('visitorNotified', 'true');
-    
+
     // Track page engagement time
     let engagementTime = 0;
     const engagementInterval = setInterval(() => {
         engagementTime += 1;
     }, 1000);
-    
+
     // Log engagement time when user leaves
     window.addEventListener('beforeunload', () => {
         clearInterval(engagementInterval);
