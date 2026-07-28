@@ -25,7 +25,7 @@ const RESUME_DATA = {
             { name: "Excel / VBA", tier: "Expert", icon: "fa-file-excel" },
             { name: "Python (Pandas)", tier: "Proficient", icon: "fa-python" },
             { name: "Tableau", tier: "Proficient", icon: "fa-chart-bar" },
-            { name: "Power BI", tier: "Working", icon: "fa-chart-pie" },
+            { name: "Power BI", tier: "Proficient", icon: "fa-chart-pie" },
             { name: "Data Visualization", tier: "Proficient", icon: "fa-eye" },
             { name: "ETL / Data Pipelines", tier: "Proficient", icon: "fa-exchange-alt" }
         ],
@@ -338,7 +338,7 @@ const AI_KNOWLEDGE = {
             "python": { strength: "proficient", years: 4 },
             "excel": { strength: "expert", years: 20 },
             "tableau": { strength: "proficient", years: 4 },
-            "power bi": { strength: "working", years: 2 },
+            "power bi": { strength: "proficient", years: 5 },
             "data analyst": { strength: "proficient", years: 10 },
             "data analysis": { strength: "proficient", years: 12 },
             "business analyst": { strength: "expert", years: 10 },
@@ -461,12 +461,12 @@ const AI_KNOWLEDGE = {
 • Customer and provider support (23 years)
 
 **Proficient** — used regularly to ship real work:
-• Python, Tableau, Linux, Git, ETL pipelines
+• Python, Tableau, Power BI (5 years), Linux, Git, ETL pipelines
 • Prompt engineering, LLM evaluation, browser automation (Playwright)
 • Project management and process improvement
 
 **Working knowledge** — productive, still learning:
-• Power BI, Docker, JavaScript/TypeScript
+• Docker, JavaScript/TypeScript
 
 Worth naming the boundary: he's payer-side claims and operations, not clinical.
 No nursing or coding credentials, and no degree — the technical depth comes from
