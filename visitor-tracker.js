@@ -1,32 +1,24 @@
 /**
- * Visitor Tracker with Telegram Notifications
- * Sends a Telegram message when someone opens the resume.
+ * Visitor Tracker
  *
- * NOTE: this is a static site (GitHub Pages), so the bot token below is
- * visible to anyone who views source. Use a bot dedicated to this page --
- * never one that also handles private chats. To swap bots:
- *   1. Talk to @BotFather -> /newbot
- *   2. Message the new bot once, then open
- *      https://api.telegram.org/bot<TOKEN>/getUpdates to read your chat id
- *   3. Replace BOT_TOKEN and CHAT_ID below
+ * Counts page views via GoatCounter. There is deliberately no credential in
+ * this file -- it is a public static site, so anything stored here is public.
+ * The site code below is a write-only endpoint, not a secret.
+ *
+ * To activate:
+ *   1. Sign up at https://www.goatcounter.com (free) and pick a code,
+ *      e.g. "tpawley" -> https://tpawley.goatcounter.com
+ *   2. Put that code in GOATCOUNTER_CODE below
+ *   3. View stats at https://<code>.goatcounter.com
+ *
+ * Until a code is set, this file only logs to the browser console.
  */
 
 (function() {
-    // Telegram Configuration
-    // @tsn_resume_bot -- dedicated to this page only
-    const BOT_TOKEN = 'REDACTED_TELEGRAM_BOT_TOKEN';
-    const CHAT_ID = '6086511173';
-    const TELEGRAM_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    const GOATCOUNTER_CODE = '';  // <-- your goatcounter subdomain, e.g. 'tpawley'
 
-    // Prevent duplicate notifications on page refresh
-    if (sessionStorage.getItem('visitorNotified')) {
-        return;
-    }
-
-    // Get visitor info
     const visitorInfo = {
         timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent,
         language: navigator.language,
         platform: navigator.platform,
         screenSize: `${window.screen.width}x${window.screen.height}`,
@@ -34,47 +26,18 @@
         page: window.location.href
     };
 
-    // Format message
-    const message = `🎯 *Resume Visitor Alert!*
+    console.log('📊 Visitor:', visitorInfo);
 
-📅 Time: ${new Date().toLocaleString()}
-🌐 Source: ${visitorInfo.referrer}
-💻 Platform: ${visitorInfo.platform}
-📱 Screen: ${visitorInfo.screenSize}
-🗣️ Language: ${visitorInfo.language}
-
-🔗 Page: ${visitorInfo.page}
-
-Someone is checking out your resume!`;
-
-    // Log to console (always works)
-    console.log('📊 Visitor tracked:', visitorInfo);
-
-    // Send to Telegram
-    fetch(TELEGRAM_API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            chat_id: CHAT_ID,
-            text: message,
-            parse_mode: 'Markdown',
-            disable_web_page_preview: true
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.ok) {
-            console.log('✅ Telegram notification sent');
-        } else {
-            console.log('⚠️ Telegram notification failed:', data.description);
-        }
-    })
-    .catch(err => {
-        console.log('Visitor tracked (Telegram error):', err);
-    });
-
-    // Mark as notified
-    sessionStorage.setItem('visitorNotified', 'true');
+    if (GOATCOUNTER_CODE) {
+        window.goatcounter = { path: location.pathname + location.search };
+        const s = document.createElement('script');
+        s.src = 'https://gc.zgo.at/count.js';
+        s.async = true;
+        s.setAttribute('data-goatcounter', `https://${GOATCOUNTER_CODE}.goatcounter.com/count`);
+        document.head.appendChild(s);
+    } else {
+        console.log('ℹ️ Analytics not configured -- set GOATCOUNTER_CODE in visitor-tracker.js');
+    }
 
     // Track page engagement time
     let engagementTime = 0;
@@ -82,7 +45,6 @@ Someone is checking out your resume!`;
         engagementTime += 1;
     }, 1000);
 
-    // Log engagement time when user leaves
     window.addEventListener('beforeunload', () => {
         clearInterval(engagementInterval);
         console.log(`Visitor engagement time: ${engagementTime}s`);
